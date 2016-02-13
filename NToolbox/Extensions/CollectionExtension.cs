@@ -15,7 +15,7 @@ namespace NToolbox.Extensions
 		/// <returns><strong>true</strong> if the instance is <strong>null</strong> or an empty collection; otherwise, <strong>false</strong>.</returns>
 		public static bool IsNullOrEmpty(this ICollection value)
 		{
-			return (value == null || value.Count == 0) ? true : false;
+			return (value == null || value.Count == 0);
 		}
 		#endregion
 	}

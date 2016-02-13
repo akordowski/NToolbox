@@ -59,6 +59,7 @@
     <Compile Include="NToolbox\Net\HttpCodeTest.cs" />
     <Compile Include="NToolbox\PreconditionTest.cs" />
     <Compile Include="NToolbox\Text\AsciiTest.cs" />
+    <Compile Include="NToolbox\Utils\ClassUtilTest.cs" />
     <Compile Include="NToolbox\Utils\DateUtilTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCaseSources\AsciiTestCaseSource.cs" />

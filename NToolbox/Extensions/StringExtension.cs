@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 
@@ -10,6 +11,69 @@ namespace NToolbox.Extensions
 	public static class StringExtension
 	{
 		#region Public Static Methods
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="str"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="FormatException"></exception>
+		public static string Base64Decode(this string str)
+		{
+			return Base64Decode(str, Encoding.UTF8);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="str"></param>
+		/// <param name="encoding"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="FormatException"></exception>
+		public static string Base64Decode(this string str, Encoding encoding)
+		{
+			byte[] bytes = Convert.FromBase64String(str);
+			return encoding.GetString(bytes);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="str"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException"></exception>
+		public static string Base64Encode(this string str)
+		{
+			return Base64Encode(str, Encoding.UTF8);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="str"></param>
+		/// <param name="encoding"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException"></exception>
+		public static string Base64Encode(this string str, Encoding encoding)
+		{
+			byte[] bytes = encoding.GetBytes(str);
+			return Convert.ToBase64String(bytes);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="str"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentNullException"></exception>
+		/// <remarks>http://stackoverflow.com/questions/6309379/how-to-check-for-a-valid-base-64-encoded-string-in-c-sharp</remarks>
+		public static bool IsBase64(this string str)
+		{
+			str = str.Trim();
+			return (str.Length % 4 == 0) && Regex.IsMatch(str, @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
+		}
+
 		/// <summary>
 		/// Indicates whether the string is an lower case string.
 		/// </summary>
@@ -90,6 +154,163 @@ namespace NToolbox.Extensions
 			}
 
 			return result;
+		}
+
+		/// <summary>
+		/// Converts the string representation of a number to an equivalent 8-bit unsigned integer.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>An 8-bit unsigned integer that is equivalent to <em>str</em>, or zero if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> does not consist of an optional sign followed by a sequence of digits (0 through 9).</exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="Byte.MinValue"/> or greater than <see cref="Byte.MaxValue"/>.</exception>
+		public static byte ToByte(this string str)
+		{
+			return Convert.ToByte(str);
+		}
+
+		/// <summary>
+		/// Converts the first character of the string to a Unicode character.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A Unicode character that is equivalent to the first and only character in <em>str</em>.</returns>
+		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
+		/// <exception cref="FormatException">The length of <em>str</em> is not 1.</exception>
+		public static char ToChar(this string str)
+		{
+			Precondition.IsNotNull(str, nameof(str));
+
+			return Convert.ToChar(str);
+		}
+
+		/// <summary>
+		/// Converts the string representation of a date and time to an equivalent date and time value.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>The date and time equivalent of the value of <em>str</em>, or the date and time equivalent of <see cref="DateTime.MinValue"/> if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> is not a properly formatted date and time string.</exception>
+		public static DateTime ToDateTime(this string str)
+		{
+			return Convert.ToDateTime(str);
+		}
+
+		/// <summary>
+		/// Converts the string representation of a number to an equivalent decimal number.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A decimal number that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> is not a number in a valid format.</exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="Decimal.MinValue"/> or greater than <see cref="Decimal.MaxValue"/>.</exception>
+		public static decimal ToDecimal(this string str)
+		{
+			return Convert.ToDecimal(str);
+		}
+
+		/// <summary>
+		/// Converts the string representation of a number to an equivalent double-precision floating-point number.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A double-precision floating-point number that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> is not a number in a valid format.</exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="Double.MinValue"/> or greater than <see cref="Double.MaxValue"/>.</exception>
+		public static double ToDouble(this string str)
+		{
+			return Convert.ToDouble(str);
+		}
+
+		/// <summary>
+		/// Converts the string representation of a number to an equivalent 16-bit signed integer.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A 16-bit signed integer that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> does not consist of an optional sign followed by a sequence of digits (0 through 9). </exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="Int16.MinValue"/> or greater than <see cref="Int16.MaxValue"/>.</exception>
+		public static short ToInt16(this string str)
+		{
+			return Convert.ToInt16(str);
+		}
+
+		/// <summary>
+		/// Converts the string representation of a number to an equivalent 32-bit signed integer.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A 32-bit signed integer that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> does not consist of an optional sign followed by a sequence of digits (0 through 9). </exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="Int32.MinValue"/> or greater than <see cref="Int32.MaxValue"/>.</exception>
+		public static int ToInt32(this string str)
+		{
+			return Convert.ToInt32(str);
+		}
+
+		/// <summary>
+		/// Converts the specified string representation of a number to an equivalent 64-bit signed integer.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A 64-bit signed integer that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> does not consist of an optional sign followed by a sequence of digits (0 through 9). </exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="Int64.MinValue"/> or greater than <see cref="Int64.MaxValue"/>.</exception>
+		public static long ToInt64(this string str)
+		{
+			return Convert.ToInt64(str);
+		}
+
+		/// <summary>
+		/// Converts the specified string representation of a number to an equivalent 8-bit signed integer.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A 8-bit signed integer that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> does not consist of an optional sign followed by a sequence of digits (0 through 9).</exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="SByte.MinValue"/> or greater than <see cref="SByte.MaxValue"/>.</exception>
+		public static sbyte ToSByte(this string str)
+		{
+			return Convert.ToSByte(str);
+		}
+
+		/// <summary>
+		/// Converts the specified string representation of a number to an equivalent single-precision floating-point number.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A single-precision floating-point number that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> is not a number in a valid format.</exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="Single.MinValue"/> or greater than <see cref="Single.MaxValue"/>.</exception>
+		public static float ToSingle(this string str)
+		{
+			return Convert.ToSingle(str);
+		}
+
+		/// <summary>
+		/// Converts the specified string representation of a number to an equivalent 16-bit unsigned integer.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A 16-bit unsigned integer that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> does not consist of an optional sign followed by a sequence of digits (0 through 9).</exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="UInt16.MinValue"/> or greater than <see cref="UInt16.MaxValue"/>.</exception>
+		public static ushort ToUInt16(this string str)
+		{
+			return Convert.ToUInt16(str);
+		}
+
+		/// <summary>
+		/// Converts the specified string representation of a number to an equivalent 32-bit unsigned integer.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A 32-bit unsigned integer that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> does not consist of an optional sign followed by a sequence of digits (0 through 9).</exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="UInt32.MinValue"/> or greater than <see cref="UInt32.MaxValue"/>.</exception>
+		public static uint ToUInt32(this string str)
+		{
+			return Convert.ToUInt32(str);
+		}
+
+		/// <summary>
+		/// Converts the specified string representation of a number to an equivalent 64-bit unsigned integer.
+		/// </summary>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>A 64-bit unsigned integer that is equivalent to the number in <em>str</em>, or 0 (zero) if <em>str</em> is <strong>null</strong>.</returns>
+		/// <exception cref="FormatException"><em>str</em> does not consist of an optional sign followed by a sequence of digits (0 through 9).</exception>
+		/// <exception cref="OverflowException"><em>str</em> represents a number that is less than <see cref="UInt64.MinValue"/> or greater than <see cref="UInt64.MaxValue"/>.</exception>
+		public static ulong ToUInt64(this string str)
+		{
+			return Convert.ToUInt64(str);
 		}
 
 		/// <summary>

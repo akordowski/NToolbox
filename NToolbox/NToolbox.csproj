@@ -50,7 +50,7 @@
     <Compile Include="EventArgs.cs" />
     <Compile Include="Extensions\CollectionExtension.cs" />
     <Compile Include="Extensions\ComparableExtension.cs" />
-    <Compile Include="Extensions\DateExtension.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\NumericExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Globalization\CountryAlpha2.cs" />

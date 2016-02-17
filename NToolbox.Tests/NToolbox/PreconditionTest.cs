@@ -32,19 +32,19 @@ namespace NToolbox.Tests.NToolbox
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "IsNotNull_Throws_ArgumentNullException_TestCases_1")]
 		public void IsNotNull_Throws_ArgumentNullException(Culture culture, object value, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNull(value), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNull(value), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "IsNotNull_Throws_ArgumentNullException_TestCases_2")]
 		public void IsNotNull_Throws_ArgumentNullException(Culture culture, object value, string parameter, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNull(value, parameter), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNull(value, parameter), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "IsNotNull_Throws_ArgumentNullException_TestCases_3")]
 		public void IsNotNull_Throws_ArgumentNullException(Culture culture, object value, string parameter, string message, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNull(value, parameter, message), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNull(value, parameter, message), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "Collection_IsNotNullOrEmpty_Throws_Nothing_1")]
@@ -68,37 +68,37 @@ namespace NToolbox.Tests.NToolbox
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "Collection_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_1")]
 		public void IsNotNullOrEmpty_Throws_ArgumentNullException(Culture culture, ICollection value, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "Collection_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_2")]
 		public void IsNotNullOrEmpty_Throws_ArgumentNullException(Culture culture, ICollection value, string parameter, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "Collection_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_3")]
 		public void IsNotNullOrEmpty_Throws_ArgumentNullException(Culture culture, ICollection value, string parameter, string message, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter, message, null), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter, message, null), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "Collection_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_1")]
 		public void IsNotNullOrEmpty_Throws_ArgumentEmptyException(Culture culture, ICollection value, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "Collection_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_2")]
 		public void IsNotNullOrEmpty_Throws_ArgumentEmptyException(Culture culture, ICollection value, string parameter, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "Collection_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_3")]
 		public void IsNotNullOrEmpty_Throws_ArgumentEmptyException(Culture culture, ICollection value, string parameter, string message, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter, null, message), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter, null, message), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrEmpty_Throws_Nothing_1")]
@@ -122,37 +122,37 @@ namespace NToolbox.Tests.NToolbox
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_1")]
 		public void IsNotNullOrEmpty_Throws_ArgumentNullException(Culture culture, string value, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_2")]
 		public void IsNotNullOrEmpty_Throws_ArgumentNullException(Culture culture, string value, string parameter, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_3")]
 		public void IsNotNullOrEmpty_Throws_ArgumentNullException(Culture culture, string value, string parameter, string message, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter, message, null), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter, message, null), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_1")]
 		public void IsNotNullOrEmpty_Throws_ArgumentEmptyException(Culture culture, string value, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_2")]
 		public void IsNotNullOrEmpty_Throws_ArgumentEmptyException(Culture culture, string value, string parameter, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_3")]
 		public void IsNotNullOrEmpty_Throws_ArgumentEmptyException(Culture culture, string value, string parameter, string message, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter, null, message), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentEmptyException>(culture, () => Precondition.IsNotNullOrEmpty(value, parameter, null, message), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrWhiteSpace_Throws_Nothing_1")]
@@ -176,37 +176,37 @@ namespace NToolbox.Tests.NToolbox
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrWhiteSpace_Throws_ArgumentNullException_TestCases_1")]
 		public void IsNotNullOrWhiteSpace_Throws_ArgumentNullException(Culture culture, string value, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrWhiteSpace_Throws_ArgumentNullException_TestCases_2")]
 		public void IsNotNullOrWhiteSpace_Throws_ArgumentNullException(Culture culture, string value, string parameter, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value, parameter), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value, parameter), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrWhiteSpace_Throws_ArgumentNullException_TestCases_3")]
 		public void IsNotNullOrWhiteSpace_Throws_ArgumentNullException(Culture culture, string value, string parameter, string message, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value, parameter, message, null), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentNullException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value, parameter, message, null), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException_TestCases_1")]
 		public void IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException(Culture culture, string value, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentWhiteSpaceException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentWhiteSpaceException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException_TestCases_2")]
 		public void IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException(Culture culture, string value, string parameter, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentWhiteSpaceException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value, parameter), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentWhiteSpaceException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value, parameter), expectedParameter, expectedMessage, null);
 		}
 
 		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException_TestCases_3")]
 		public void IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException(Culture culture, string value, string parameter, string message, string expectedParameter, string expectedMessage)
 		{
-			AssertException<ArgumentWhiteSpaceException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value, parameter, null, message), expectedParameter, expectedMessage, null);
+			AssertThrowsException<ArgumentWhiteSpaceException>(culture, () => Precondition.IsNotNullOrWhiteSpace(value, parameter, null, message), expectedParameter, expectedMessage, null);
 		}
 		#endregion
 	}

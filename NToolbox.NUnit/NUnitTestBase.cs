@@ -9,14 +9,14 @@ namespace NToolbox.NUnit
 	public abstract class NUnitTestBase
 	{
 		#region Protected Methods
-		protected void AssertException<T>(Action method, string expectedParameter) where T : Exception
+		protected void AssertThrowsException<T>(Action method, string expectedParameter) where T : Exception
 		{
 			Assert.That(() => method(),
 				Throws.InstanceOf<T>()
 				.And.Property("ParamName").EqualTo(expectedParameter));
 		}
 
-		protected void AssertException<T>(Culture culture, Action method, string expectedParameter, string expectedMessage, Exception expectedInnerException) where T : Exception
+		protected void AssertThrowsException<T>(Culture culture, Action method, string expectedParameter, string expectedMessage, Exception expectedInnerException) where T : Exception
 		{
 			SetCulture(culture);
 

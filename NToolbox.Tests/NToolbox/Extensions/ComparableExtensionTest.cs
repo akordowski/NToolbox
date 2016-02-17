@@ -25,7 +25,7 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		[TestCase(1, 1, null, "max")]
 		public void IsBetween_Throws_ArgumentNullException(IComparable value, IComparable min, IComparable max, string expectedParameter)
 		{
-			AssertException<ArgumentNullException>(() => value.IsBetween(min, max), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => value.IsBetween(min, max), expectedParameter);
 		}
 
 		[TestCase(0, 1, false)]
@@ -38,7 +38,7 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		[TestCaseSource("Comparable_TestCases")]
 		public void IsEqual_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
 		{
-			AssertException<ArgumentNullException>(() => value.IsEqual(referenceValue), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => value.IsEqual(referenceValue), expectedParameter);
 		}
 
 		[TestCase(1, 0, true)]
@@ -52,7 +52,7 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		[TestCaseSource("Comparable_TestCases")]
 		public void IsGreaterOrEqual_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
 		{
-			AssertException<ArgumentNullException>(() => value.IsGreaterOrEqual(referenceValue), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => value.IsGreaterOrEqual(referenceValue), expectedParameter);
 		}
 
 		[TestCase(1, 0, true)]
@@ -65,7 +65,7 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		[TestCaseSource("Comparable_TestCases")]
 		public void IsGreater_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
 		{
-			AssertException<ArgumentNullException>(() => value.IsGreater(referenceValue), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => value.IsGreater(referenceValue), expectedParameter);
 		}
 
 		[TestCase(2, 3, true)]
@@ -79,7 +79,7 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		[TestCaseSource("Comparable_TestCases")]
 		public void IsSmallerOrEqual_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
 		{
-			AssertException<ArgumentNullException>(() => value.IsSmallerOrEqual(referenceValue), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => value.IsSmallerOrEqual(referenceValue), expectedParameter);
 		}
 
 		[TestCase(1, 0, false)]
@@ -92,7 +92,7 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		[TestCaseSource("Comparable_TestCases")]
 		public void IsSmaller_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
 		{
-			AssertException<ArgumentNullException>(() => value.IsSmaller(referenceValue), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => value.IsSmaller(referenceValue), expectedParameter);
 		}
 		#endregion
 

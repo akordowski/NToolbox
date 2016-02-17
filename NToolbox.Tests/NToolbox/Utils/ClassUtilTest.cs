@@ -35,7 +35,7 @@ namespace NToolbox.Tests.NToolbox.Utils
 		[Test]
 		public void CreateInstance_Throws_ArgumentNullException()
 		{
-			AssertException<ArgumentNullException>(() => ClassUtil.CreateInstance(null), "type");
+			AssertThrowsException<ArgumentNullException>(() => ClassUtil.CreateInstance(null), "type");
 		}
 
 		[Test]
@@ -64,7 +64,7 @@ namespace NToolbox.Tests.NToolbox.Utils
 		[TestCaseSource("CreateDictionaryInstance_TestCases")]
 		public void CreateDictionaryInstance_Throws_ArgumentNullException(Type keyType, Type valueType, string expectedParameter)
 		{
-			AssertException<ArgumentNullException>(() => ClassUtil.CreateDictionaryInstance(keyType, valueType), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => ClassUtil.CreateDictionaryInstance(keyType, valueType), expectedParameter);
 		}
 
 		[Test]
@@ -92,7 +92,7 @@ namespace NToolbox.Tests.NToolbox.Utils
 		[Test]
 		public void CreateListInstance_Throws_ArgumentNullException()
 		{
-			AssertException<ArgumentNullException>(() => ClassUtil.CreateListInstance(null), "type");
+			AssertThrowsException<ArgumentNullException>(() => ClassUtil.CreateListInstance(null), "type");
 		}
 		#endregion
 

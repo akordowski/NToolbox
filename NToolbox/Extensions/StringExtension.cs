@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -14,10 +15,10 @@ namespace NToolbox.Extensions
 		/// <summary>
 		/// 
 		/// </summary>
-		/// <param name="str"></param>
-		/// <returns></returns>
-		/// <exception cref="ArgumentNullException"></exception>
-		/// <exception cref="FormatException"></exception>
+		/// <param name="str">A base 64 string to convert.</param>
+		/// <returns>The string representation of a base 64 encoded string.</returns>
+		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.exception>
+		/// <exception cref="FormatException">The format of <em>str</em> is invalid. <em>str</em> contains a non-base-64 character.</exception>
 		public static string Base64Decode(this string str)
 		{
 			return Base64Decode(str, Encoding.UTF8);
@@ -26,37 +27,43 @@ namespace NToolbox.Extensions
 		/// <summary>
 		/// 
 		/// </summary>
-		/// <param name="str"></param>
+		/// <param name="str">A base 64 string to convert.</param>
 		/// <param name="encoding"></param>
-		/// <returns></returns>
-		/// <exception cref="ArgumentNullException"></exception>
-		/// <exception cref="FormatException"></exception>
+		/// <returns>The string representation of a base 64 encoded string.</returns>
+		/// <exception cref="ArgumentNullException"><em>str</em> or <em>encoding</em> is <strong>null</strong>.</exception>
+		/// <exception cref="FormatException">The format of <em>str</em> is invalid. <em>str</em> contains a non-base-64 character.</exception>
 		public static string Base64Decode(this string str, Encoding encoding)
 		{
+			Precondition.IsNotNull(str, nameof(str));
+			Precondition.IsNotNull(encoding, nameof(encoding));
+
 			byte[] bytes = Convert.FromBase64String(str);
 			return encoding.GetString(bytes);
 		}
 
 		/// <summary>
-		/// 
+		/// Converts an string to its equivalent string representation that is encoded with base-64 digits.
 		/// </summary>
-		/// <param name="str"></param>
-		/// <returns></returns>
-		/// <exception cref="ArgumentNullException"></exception>
+		/// <param name="str">A string to convert.</param>
+		/// <returns>The string representation, in base 64, of the contents of <em>str</em>.</returns>
+		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
 		public static string Base64Encode(this string str)
 		{
 			return Base64Encode(str, Encoding.UTF8);
 		}
 
 		/// <summary>
-		/// 
+		/// Converts an string to its equivalent string representation that is encoded with base-64 digits.
 		/// </summary>
-		/// <param name="str"></param>
+		/// <param name="str">A string to convert.</param>
 		/// <param name="encoding"></param>
-		/// <returns></returns>
-		/// <exception cref="ArgumentNullException"></exception>
+		/// <returns>The string representation, in base 64, of the contents of <em>str</em>.</returns>
+		/// <exception cref="ArgumentNullException"><em>str</em> or <em>encoding</em> is <strong>null</strong>.</exception>
 		public static string Base64Encode(this string str, Encoding encoding)
 		{
+			Precondition.IsNotNull(str, nameof(str));
+			Precondition.IsNotNull(encoding, nameof(encoding));
+
 			byte[] bytes = encoding.GetBytes(str);
 			return Convert.ToBase64String(bytes);
 		}
@@ -64,9 +71,9 @@ namespace NToolbox.Extensions
 		/// <summary>
 		/// 
 		/// </summary>
-		/// <param name="str"></param>
+		/// <param name="str">A string to test.</param>
 		/// <returns></returns>
-		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
 		/// <remarks>http://stackoverflow.com/questions/6309379/how-to-check-for-a-valid-base-64-encoded-string-in-c-sharp</remarks>
 		public static bool IsBase64(this string str)
 		{
@@ -118,6 +125,20 @@ namespace NToolbox.Extensions
 			Precondition.IsNotNull(str, nameof(str));
 
 			return Regex.IsMatch(str, @"^[A-Z]+$");
+		}
+
+		/// <summary>
+		/// Splits a string into substrings based on the characters in an array.
+		/// </summary>
+		/// <param name="str">A string to split.</param>
+		/// <param name="separator">A character array that delimits the substrings in this string, an empty array that contains no delimiters, or <strong>null</strong>.</param>
+		/// <returns>An array whose elements contain the substrings in this instance that are delimited by one or more characters in <em>separator</em>.</returns>
+		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
+		public static string[] ToArray(this string str, params char[] separator)
+		{
+			Precondition.IsNotNull(str, nameof(str));
+
+			return str.Split(separator);
 		}
 
 		/// <summary>
@@ -251,6 +272,20 @@ namespace NToolbox.Extensions
 		public static long ToInt64(this string str)
 		{
 			return Convert.ToInt64(str);
+		}
+
+		/// <summary>
+		/// Splits a string into substrings based on the characters in an array.
+		/// </summary>
+		/// <param name="str">A string to split.</param>
+		/// <param name="separator">A character array that delimits the substrings in this string, an empty array that contains no delimiters, or <strong>null</strong>.</param>
+		/// <returns>An list whose elements contain the substrings in this instance that are delimited by one or more characters in <em>separator</em>.</returns>
+		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
+		public static List<string> ToList(this string str, params char[] separator)
+		{
+			Precondition.IsNotNull(str, nameof(str));
+
+			return new List<string>(str.Split(separator));
 		}
 
 		/// <summary>

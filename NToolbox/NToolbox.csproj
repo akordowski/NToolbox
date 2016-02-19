@@ -63,6 +63,9 @@
     <Compile Include="Globalization\LanguageAlpha3T.cs" />
     <Compile Include="Globalization\LanguageFamily.cs" />
     <Compile Include="ICloneable.cs" />
+    <Compile Include="Media\AudioCodec.cs" />
+    <Compile Include="Media\Bitrate.cs" />
+    <Compile Include="Media\Samplerate.cs" />
     <Compile Include="Net\HttpCode.cs" />
     <Compile Include="Net\HttpMethod.cs" />
     <Compile Include="Precondition.cs" />

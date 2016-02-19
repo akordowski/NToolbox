@@ -56,6 +56,8 @@
     <Compile Include="NToolbox\Globalization\CultureExtensionTest.cs" />
     <Compile Include="NToolbox\Globalization\CultureTest.cs" />
     <Compile Include="NToolbox\Globalization\LanguageTest.cs" />
+    <Compile Include="NToolbox\Media\BitrateTest.cs" />
+    <Compile Include="NToolbox\Media\SamplerateTest.cs" />
     <Compile Include="NToolbox\Net\HttpCodeTest.cs" />
     <Compile Include="NToolbox\PreconditionTest.cs" />
     <Compile Include="NToolbox\Text\AsciiTest.cs" />
@@ -63,6 +65,8 @@
     <Compile Include="NToolbox\Utils\DateUtilTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCaseSources\AsciiTestCaseSource.cs" />
+    <Compile Include="TestCaseSources\SamplerateTestCaseSource.cs" />
+    <Compile Include="TestCaseSources\BitrateTestCaseSource.cs" />
     <Compile Include="TestCaseSources\CountryAlpha2TestCaseSource.cs" />
     <Compile Include="TestCaseSources\CountryAlpha3TestCaseSource.cs" />
     <Compile Include="TestCaseSources\CountryNumericTestCaseSource.cs" />

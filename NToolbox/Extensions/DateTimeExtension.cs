@@ -87,7 +87,7 @@ namespace NToolbox.Extensions
 		}
 
 		/// <summary>
-		/// A date and time. 
+		/// Creates a new <see cref="DateTime"/> object that has the same number of ticks as the specified <see cref="DateTime"/>, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified <see cref="DateTimeKind"/> value.
 		/// </summary>
 		/// <param name="date">A date and time.</param>
 		/// <param name="kind">One of the enumeration values that indicates whether the new object represents local time, UTC, or neither.</param>

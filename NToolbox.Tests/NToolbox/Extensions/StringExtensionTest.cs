@@ -4,6 +4,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 namespace NToolbox.Tests.NToolbox.Extensions
 {
@@ -14,7 +15,8 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		private const string LowerCaseString = "string";
 		private const string MixedCaseString = "sTrInG";
 		private const string UpperCaseString = "STRING";
-		private const string UrlDecodedText = "This is ^a^ string <that> contains /special characters.";
+		private const string DefaultText = "This is ^a^ string <that> contains /special characters.";
+		private const string Base64EncodedText = "VGhpcyBpcyBeYV4gc3RyaW5nIDx0aGF0PiBjb250YWlucyAvc3BlY2lhbCBjaGFyYWN0ZXJzLg==";
 		private const string UrlEncodedText = "This+is+%5ea%5e+string+%3cthat%3e+contains+%2fspecial+characters.";
 		private const string SpaceSeparatedString = "abc def ghi jkl mno";
 		private const string CommaSeparatedString = "abc,def,ghi,jkl,mno";
@@ -22,6 +24,45 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		#endregion
 
 		#region Tests
+		[TestCase(Base64EncodedText, DefaultText)]
+		public void Base64Decode_Returns_Valid_Result(string base64Text, string expectedValue)
+		{
+			Assert.That(base64Text.Base64Decode(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, null, "str")]
+		[TestCase(Base64EncodedText, null, "encoding")]
+		public void Base64Decode_Throws_ArgumentNullException(string value, Encoding encoding, string expectedParameter)
+		{
+			AssertThrowsException<ArgumentNullException>(() => value.Base64Decode(encoding), expectedParameter);
+		}
+
+		[TestCase(DefaultText, Base64EncodedText)]
+		public void Base64Encode_Returns_Valid_Result(string defaultText, string expectedValue)
+		{
+			Assert.That(defaultText.Base64Encode(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, null, "str")]
+		[TestCase(DefaultText, null, "encoding")]
+		public void Base64Encode_Throws_ArgumentNullException(string value, Encoding encoding, string expectedParameter)
+		{
+			AssertThrowsException<ArgumentNullException>(() => value.Base64Encode(encoding), expectedParameter);
+		}
+
+		[TestCase(DefaultText, false)]
+		[TestCase(Base64EncodedText, true)]
+		public void IsBase64_Returns_Valid_Result(string base64Text, bool expectedValue)
+		{
+			Assert.That(base64Text.IsBase64(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, "str")]
+		public void IsBase64_Throws_ArgumentNullException(string value, string expectedParameter)
+		{
+			AssertThrowsException<ArgumentNullException>(() => value.IsBase64(), expectedParameter);
+		}
+
 		[TestCase(null, ExpectedResult = true)]
 		[TestCase("", ExpectedResult = true)]
 		[TestCase("  ", ExpectedResult = false)]
@@ -99,6 +140,66 @@ namespace NToolbox.Tests.NToolbox.Extensions
 			Assert.That(() => value.ToBoolean(), Throws.InstanceOf<FormatException>());
 		}
 
+		[TestCase(null, (byte)0)]
+		[TestCase("1", (byte)1)]
+		public void ToByte_Returns_Valid_Result(string value, byte expectedValue)
+		{
+			Assert.That(value.ToByte(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase("a", 'a')]
+		public void ToChar_Returns_Valid_Result(string value, char expectedValue)
+		{
+			Assert.That(value.ToChar(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, "str")]
+		public void ToChar_Throws_ArgumentNullException(string value, string expectedParameter)
+		{
+			AssertThrowsException<ArgumentNullException>(() => value.ToChar(), expectedParameter);
+		}
+
+		[TestCaseSource("ToDateTime_TestCases")]
+		public void ToDateTime_Returns_Valid_Result(string value, DateTime expectedValue)
+		{
+			Assert.That(value.ToDateTime(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, 0)]
+		[TestCase("1", 1)]
+		public void ToDecimal_Returns_Valid_Result(string value, decimal expectedValue)
+		{
+			Assert.That(value.ToDecimal(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, (double)0)]
+		[TestCase("1", (double)1)]
+		public void ToDouble_Returns_Valid_Result(string value, double expectedValue)
+		{
+			Assert.That(value.ToDouble(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, (short)0)]
+		[TestCase("1", (short)1)]
+		public void ToInt16_Returns_Valid_Result(string value, short expectedValue)
+		{
+			Assert.That(value.ToInt16(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, (int)0)]
+		[TestCase("1", (int)1)]
+		public void ToInt32_Returns_Valid_Result(string value, int expectedValue)
+		{
+			Assert.That(value.ToInt32(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, (long)0)]
+		[TestCase("1", (long)1)]
+		public void ToInt64_Returns_Valid_Result(string value, long expectedValue)
+		{
+			Assert.That(value.ToInt64(), Is.EqualTo(expectedValue));
+		}
+
 		[TestCaseSource("ToList_TestCases")]
 		public void ToList_Returns_Valid_Result(string str, char separator, List<string> expectedResult)
 		{
@@ -111,15 +212,50 @@ namespace NToolbox.Tests.NToolbox.Extensions
 			AssertThrowsException<ArgumentNullException>(() => ((string)null).ToList(' '), "str");
 		}
 
+		[TestCase(null, (sbyte)0)]
+		[TestCase("1", (sbyte)1)]
+		public void ToSByte_Returns_Valid_Result(string value, sbyte expectedValue)
+		{
+			Assert.That(value.ToSByte(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, (float)0)]
+		[TestCase("1", (float)1)]
+		public void ToSingle_Returns_Valid_Result(string value, float expectedValue)
+		{
+			Assert.That(value.ToSingle(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, (ushort)0)]
+		[TestCase("1", (ushort)1)]
+		public void ToUInt16_Returns_Valid_Result(string value, ushort expectedValue)
+		{
+			Assert.That(value.ToUInt16(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, (uint)0)]
+		[TestCase("1", (uint)1)]
+		public void ToUInt32_Returns_Valid_Result(string value, uint expectedValue)
+		{
+			Assert.That(value.ToUInt32(), Is.EqualTo(expectedValue));
+		}
+
+		[TestCase(null, (ulong)0)]
+		[TestCase("1", (ulong)1)]
+		public void ToUInt64_Returns_Valid_Result(string value, ulong expectedValue)
+		{
+			Assert.That(value.ToUInt64(), Is.EqualTo(expectedValue));
+		}
+
 		[TestCase(null, null)]
-		[TestCase(UrlEncodedText, UrlDecodedText)]
+		[TestCase(UrlEncodedText, DefaultText)]
 		public void UrlDecode_Returns_Valid_Result(string text, string urlDecodedText)
 		{
 			Assert.That(() => text.UrlDecode(), Is.EqualTo(urlDecodedText));
 		}
 
 		[TestCase(null, null)]
-		[TestCase(UrlDecodedText, UrlEncodedText)]
+		[TestCase(DefaultText, UrlEncodedText)]
 		public void UrlEncode_Returns_Valid_Result(string text, string urlEncodedText)
 		{
 			Assert.That(() => text.UrlEncode(), Is.EqualTo(urlEncodedText));
@@ -148,6 +284,12 @@ namespace NToolbox.Tests.NToolbox.Extensions
 			yield return new TestCaseData("true").Returns(true);
 			yield return new TestCaseData(Boolean.FalseString).Returns(false);
 			yield return new TestCaseData(Boolean.TrueString).Returns(true);
+		}
+
+		public static IEnumerable ToDateTime_TestCases()
+		{
+			yield return new TestCaseData(null, DateTime.MinValue);
+			yield return new TestCaseData("01.01.2016", new DateTime(2016, 1 ,1));
 		}
 
 		public static IEnumerable ToList_TestCases()

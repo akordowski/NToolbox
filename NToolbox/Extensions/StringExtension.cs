@@ -13,11 +13,11 @@ namespace NToolbox.Extensions
 	{
 		#region Public Static Methods
 		/// <summary>
-		/// 
+		/// Converts an string with base-64 digits to its equivalent decoded string representation. Default character encoding UTF-8.
 		/// </summary>
-		/// <param name="str">A base 64 string to convert.</param>
-		/// <returns>The string representation of a base 64 encoded string.</returns>
-		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.exception>
+		/// <param name="str">A base-64 string to convert.</param>
+		/// <returns>The string representation of a base-64 encoded string.</returns>
+		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
 		/// <exception cref="FormatException">The format of <em>str</em> is invalid. <em>str</em> contains a non-base-64 character.</exception>
 		public static string Base64Decode(this string str)
 		{
@@ -25,10 +25,10 @@ namespace NToolbox.Extensions
 		}
 
 		/// <summary>
-		/// 
+		/// Converts an string with base-64 digits to its equivalent decoded string representation.
 		/// </summary>
 		/// <param name="str">A base 64 string to convert.</param>
-		/// <param name="encoding"></param>
+		/// <param name="encoding">Represents the string character encoding.</param>
 		/// <returns>The string representation of a base 64 encoded string.</returns>
 		/// <exception cref="ArgumentNullException"><em>str</em> or <em>encoding</em> is <strong>null</strong>.</exception>
 		/// <exception cref="FormatException">The format of <em>str</em> is invalid. <em>str</em> contains a non-base-64 character.</exception>
@@ -42,7 +42,7 @@ namespace NToolbox.Extensions
 		}
 
 		/// <summary>
-		/// Converts an string to its equivalent string representation that is encoded with base-64 digits.
+		/// Converts an string to its equivalent string representation that is encoded with base-64 digits. Default character encoding UTF-8.
 		/// </summary>
 		/// <param name="str">A string to convert.</param>
 		/// <returns>The string representation, in base 64, of the contents of <em>str</em>.</returns>
@@ -56,7 +56,7 @@ namespace NToolbox.Extensions
 		/// Converts an string to its equivalent string representation that is encoded with base-64 digits.
 		/// </summary>
 		/// <param name="str">A string to convert.</param>
-		/// <param name="encoding"></param>
+		/// <param name="encoding">Represents the string character encoding.</param>
 		/// <returns>The string representation, in base 64, of the contents of <em>str</em>.</returns>
 		/// <exception cref="ArgumentNullException"><em>str</em> or <em>encoding</em> is <strong>null</strong>.</exception>
 		public static string Base64Encode(this string str, Encoding encoding)
@@ -69,14 +69,16 @@ namespace NToolbox.Extensions
 		}
 
 		/// <summary>
-		/// 
+		/// Indicates whether the string is an base-64 encoded string.
 		/// </summary>
 		/// <param name="str">A string to test.</param>
-		/// <returns></returns>
+		/// <returns><strong>true</strong> if the <em>str</em> parameter is an base-64 encoded string; otherwise, <strong>false</strong>.</returns>
 		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
-		/// <remarks>http://stackoverflow.com/questions/6309379/how-to-check-for-a-valid-base-64-encoded-string-in-c-sharp</remarks>
+		/// <remarks>This method is based on an example from <a href="http://stackoverflow.com/questions/6309379/how-to-check-for-a-valid-base-64-encoded-string-in-c-sharp" target="_blank">StackOverflow</a>.</remarks>
 		public static bool IsBase64(this string str)
 		{
+			Precondition.IsNotNull(str, nameof(str));
+
 			str = str.Trim();
 			return (str.Length % 4 == 0) && Regex.IsMatch(str, @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
 		}

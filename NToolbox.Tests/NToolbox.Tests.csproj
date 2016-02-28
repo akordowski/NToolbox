@@ -50,6 +50,7 @@
     <Compile Include="NToolbox\Extensions\CollectionExtensionTest.cs" />
     <Compile Include="NToolbox\Extensions\ComparableExtensionTest.cs" />
     <Compile Include="NToolbox\Extensions\DateTimeExtensionTest.cs" />
+    <Compile Include="NToolbox\Extensions\DictionaryExtensionTest.cs" />
     <Compile Include="NToolbox\Extensions\NumericExtensionTest.cs" />
     <Compile Include="NToolbox\Extensions\StringExtensionTest.cs" />
     <Compile Include="NToolbox\Globalization\CountryTest.cs" />

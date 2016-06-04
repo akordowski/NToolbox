@@ -3,7 +3,7 @@
 namespace NToolbox.Extensions
 {
 	/// <summary>
-	/// Contains IComparable extension methods.
+	/// Contains <see cref="IComparable"/> extension methods.
 	/// </summary>
 	public static class ComparableExtension
 	{
@@ -14,8 +14,10 @@ namespace NToolbox.Extensions
 		/// <param name="value">The instance to test.</param>
 		/// <param name="min">The minimum value to test.</param>
 		/// <param name="max">The maximum value to test.</param>
-		/// <returns><strong>true</strong> if the instance is between the minimum and maximum value; otherwise, <strong>false</strong>.</returns>
-		/// <exception cref="ArgumentNullException"><em>value</em>, <em>min</em> or <em>max</em> is <strong>null</strong>.</exception>
+		/// <returns><strong>true</strong> if the instance is between the minimum and maximum
+		/// value; otherwise, <strong>false</strong>.</returns>
+		/// <exception cref="ArgumentNullException"><em>value</em>, <em>min</em> or <em>max</em> is
+		/// <strong>null</strong>.</exception>
 		public static bool IsBetween(this IComparable value, IComparable min, IComparable max)
 		{
 			Precondition.IsNotNull(value, nameof(value));
@@ -30,8 +32,10 @@ namespace NToolbox.Extensions
 		/// </summary>
 		/// <param name="value">The instance to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <returns><strong>true</strong> if the instance is equal to the reference value; otherwise, <strong>false</strong>.</returns>
-		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is <strong>null</strong>.</exception>
+		/// <returns><strong>true</strong> if the instance is equal to the reference value;
+		/// otherwise, <strong>false</strong>.</returns>
+		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is
+		/// <strong>null</strong>.</exception>
 		public static bool IsEqual(this IComparable value, IComparable referenceValue)
 		{
 			Precondition.IsNotNull(value, nameof(value));
@@ -45,8 +49,10 @@ namespace NToolbox.Extensions
 		/// </summary>
 		/// <param name="value">The instance to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <returns><strong>true</strong> if the instance is greater or equal to the reference value; otherwise, <strong>false</strong>.</returns>
-		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is <strong>null</strong>.</exception>
+		/// <returns><strong>true</strong> if the instance is greater or equal to the reference
+		/// value; otherwise, <strong>false</strong>.</returns>
+		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is
+		/// <strong>null</strong>.</exception>
 		public static bool IsGreaterOrEqual(this IComparable value, IComparable referenceValue)
 		{
 			Precondition.IsNotNull(value, nameof(value));
@@ -60,8 +66,10 @@ namespace NToolbox.Extensions
 		/// </summary>
 		/// <param name="value">The instance to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <returns><strong>true</strong> if the instance is greater as the reference value; otherwise, <strong>false</strong>.</returns>
-		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is <strong>null</strong>.</exception>
+		/// <returns><strong>true</strong> if the instance is greater as the reference value;
+		/// otherwise, <strong>false</strong>.</returns>
+		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is
+		/// <strong>null</strong>.</exception>
 		public static bool IsGreater(this IComparable value, IComparable referenceValue)
 		{
 			Precondition.IsNotNull(value, nameof(value));
@@ -75,8 +83,10 @@ namespace NToolbox.Extensions
 		/// </summary>
 		/// <param name="value">The instance to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <returns><strong>true</strong> if the instance is smaller or equal to the reference value; otherwise, <strong>false</strong>.</returns>
-		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is <strong>null</strong>.</exception>
+		/// <returns><strong>true</strong> if the instance is smaller or equal to the reference
+		/// value; otherwise, <strong>false</strong>.</returns>
+		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is
+		/// <strong>null</strong>.</exception>
 		public static bool IsSmallerOrEqual(this IComparable value, IComparable referenceValue)
 		{
 			Precondition.IsNotNull(value, nameof(value));
@@ -90,8 +100,10 @@ namespace NToolbox.Extensions
 		/// </summary>
 		/// <param name="value">The instance to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <returns><strong>true</strong> if the instance is smaller as the reference value; otherwise, <strong>false</strong>.</returns>
-		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is <strong>null</strong>.</exception>
+		/// <returns><strong>true</strong> if the instance is smaller as the reference value;
+		/// otherwise, <strong>false</strong>.</returns>
+		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is
+		/// <strong>null</strong>.</exception>
 		public static bool IsSmaller(this IComparable value, IComparable referenceValue)
 		{
 			Precondition.IsNotNull(value, nameof(value));

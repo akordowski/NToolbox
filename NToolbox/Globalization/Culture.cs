@@ -1,7 +1,8 @@
 ﻿namespace NToolbox.Globalization
 {
 	/// <summary>
-	/// Contains Windows culture identifier (<a href="https://msdn.microsoft.com/de-de/goglobal/bb964664.aspx">LCID</a>).
+	/// Contains Windows culture identifier
+	/// (<a href="https://msdn.microsoft.com/de-de/goglobal/bb964664.aspx">LCID</a>).
 	/// </summary>
 	public enum Culture
 	{

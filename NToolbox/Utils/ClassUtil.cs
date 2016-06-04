@@ -11,7 +11,8 @@ namespace NToolbox.Utils
 	{
 		#region Public Static Methods
 		/// <summary>
-		/// Creates an instance of a dictionary designated by the specified generic key and value type parameters, using the parameterless constructor.
+		/// Creates an instance of a dictionary designated by the specified generic key and value
+		/// type parameters, using the parameterless constructor.
 		/// </summary>
 		/// <typeparam name="TKey">The type of dictionary key to create.</typeparam>
 		/// <typeparam name="TValue">The type of dictionary value to create.</typeparam>
@@ -22,7 +23,8 @@ namespace NToolbox.Utils
 		}
 
 		/// <summary>
-		/// Creates an instance of a dictionary designated by the specified key and value type parameters, using the parameterless constructor.
+		/// Creates an instance of a dictionary designated by the specified key and value type
+		/// parameters, using the parameterless constructor.
 		/// </summary>
 		/// <param name="keyType">The type of dictionary key to create.</param>
 		/// <param name="valueType">The type of dictionary value to create.</param>
@@ -38,7 +40,8 @@ namespace NToolbox.Utils
 		}
 
 		/// <summary>
-		/// Creates an instance of the type designated by the specified generic type parameter, using the parameterless constructor.
+		/// Creates an instance of the type designated by the specified generic type parameter,
+		/// using the parameterless constructor.
 		/// </summary>
 		/// <typeparam name="T">The type to create.</typeparam>
 		/// <returns>A reference to the newly created object.</returns>
@@ -48,7 +51,8 @@ namespace NToolbox.Utils
 		}
 
 		/// <summary>
-		/// Creates an instance of the type designated by the specified type parameter, using the parameterless constructor.
+		/// Creates an instance of the type designated by the specified type parameter, using the
+		/// parameterless constructor.
 		/// </summary>
 		/// <param name="type">The type of object to create.</param>
 		/// <returns>A reference to the newly created object.</returns>
@@ -60,7 +64,8 @@ namespace NToolbox.Utils
 		}
 
 		/// <summary>
-		/// Creates an instance of a list designated by the specified generic type parameter, using the parameterless constructor.
+		/// Creates an instance of a list designated by the specified generic type parameter, using
+		/// the parameterless constructor.
 		/// </summary>
 		/// <typeparam name="T">The type of list object to create.</typeparam>
 		/// <returns>A reference to the newly created list.</returns>
@@ -70,7 +75,8 @@ namespace NToolbox.Utils
 		}
 
 		/// <summary>
-		/// Creates an instance of a list designated by the specified type parameter, using the parameterless constructor.
+		/// Creates an instance of a list designated by the specified type parameter, using the
+		/// parameterless constructor.
 		/// </summary>
 		/// <param name="type">The type of list object to create.</param>
 		/// <returns>A reference to the newly created list.</returns>

@@ -5,7 +5,6 @@
 	/// </summary>
 	public enum Ascii
 	{
-		#region Enums
 		/// <summary>
 		/// Null (NUL)
 		/// </summary>
@@ -645,6 +644,5 @@
 		/// Delete (DEL)
 		/// </summary>
 		Delete = 0x7F
-		#endregion
 	}
 }

@@ -17,7 +17,7 @@ namespace NToolbox
 
 		#region Constructor
 		/// <summary>
-		/// Initializes a new instance of the EventArgs class.
+		/// Initializes a new instance of the EventArgs&lt;T&gt; class.
 		/// </summary>
 		/// <param name="obj">A event data object.</param>
 		public EventArgs(T obj)

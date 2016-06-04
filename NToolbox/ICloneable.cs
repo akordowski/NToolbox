@@ -3,7 +3,8 @@
 namespace NToolbox
 {
 	/// <summary>
-	/// Supports cloning, which creates a new instance of a class with the same value as an existing instance.
+	/// Supports cloning, which creates a new instance of a class with the same value as an
+	/// existing instance.
 	/// </summary>
 	/// <typeparam name="T">The type of the class.</typeparam>
 	public interface ICloneable<T> : System.ICloneable

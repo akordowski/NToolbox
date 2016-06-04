@@ -3,7 +3,7 @@
 namespace NToolbox.Globalization
 {
 	/// <summary>
-	/// Contains Culture extension methods.
+	/// Contains <see cref="Culture"/> extension methods.
 	/// </summary>
 	public static class CultureExtension
 	{

@@ -5,7 +5,8 @@ using System.Collections;
 namespace NToolbox
 {
 	/// <summary>
-	/// Provides static methods that help a constructor or method to verify correct arguments and state.
+	/// Provides static methods that help a constructor or method to verify correct arguments and
+	/// state.
 	/// </summary>
 	public static class Precondition
 	{
@@ -14,7 +15,8 @@ namespace NToolbox
 		/// Checks whether the specified object is not <strong>null</strong>.
 		/// </summary>
 		/// <param name="obj">The object to test.</param>
-		/// <exception cref="ArgumentNullException"><em>obj</em> is <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>obj</em> is
+		/// <strong>null</strong>.</exception>
 		public static void IsNotNull(object obj)
 		{
 			if (obj == null)
@@ -28,7 +30,8 @@ namespace NToolbox
 		/// </summary>
 		/// <param name="obj">The object to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentNullException"><em>obj</em> is <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>obj</em> is
+		/// <strong>null</strong>.</exception>
 		public static void IsNotNull(object obj, string paramName)
 		{
 			if (obj == null)
@@ -43,7 +46,8 @@ namespace NToolbox
 		/// <param name="obj">The object to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="message">A message that describes the error.</param>
-		/// <exception cref="ArgumentNullException"><em>obj</em> is <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>obj</em> is
+		/// <strong>null</strong>.</exception>
 		public static void IsNotNull(object obj, string paramName, string message)
 		{
 			if (obj == null)
@@ -55,11 +59,14 @@ namespace NToolbox
 
 		#region Public Static Methods - ICollection
 		/// <summary>
-		/// Checks whether the specified collection is not <strong>null</strong> or an empty collection.
+		/// Checks whether the specified collection is not <strong>null</strong> or an empty
+		/// collection.
 		/// </summary>
 		/// <param name="col">The collection to test.</param>
-		/// <exception cref="ArgumentNullException"><em>col</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>col</em> is <strong>empty</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>col</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentEmptyException"><em>col</em> is
+		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(ICollection col)
 		{
 			if (col == null)
@@ -73,12 +80,15 @@ namespace NToolbox
 		}
 
 		/// <summary>
-		/// Checks whether the specified collection is not <strong>null</strong> or an empty collection.
+		/// Checks whether the specified collection is not <strong>null</strong> or an empty
+		/// collection.
 		/// </summary>
 		/// <param name="col">The collection to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentNullException"><em>col</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>col</em> is <strong>empty</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>col</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentEmptyException"><em>col</em> is
+		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(ICollection col, string paramName)
 		{
 			if (col == null)
@@ -92,14 +102,17 @@ namespace NToolbox
 		}
 
 		/// <summary>
-		/// Checks whether the specified collection is not <strong>null</strong> or an empty collection.
+		/// Checks whether the specified collection is not <strong>null</strong> or an empty
+		/// collection.
 		/// </summary>
 		/// <param name="col">The collection to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="messageArgNull">A message that describes the null error.</param>
 		/// <param name="messageArgEmpty">A message that describes the empty error.</param>
-		/// <exception cref="ArgumentNullException"><em>col</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>col</em> is <strong>empty</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>col</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentEmptyException"><em>col</em> is
+		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(ICollection col, string paramName, string messageArgNull, string messageArgEmpty)
 		{
 			if (col == null)
@@ -120,7 +133,8 @@ namespace NToolbox
 		/// <param name="value">The value to test.</param>
 		/// <param name="min">The minimum value to test.</param>
 		/// <param name="max">The maximum value to test.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsBetween(IComparable value, IComparable min, IComparable max)
 		{
 			if (!value.IsBetween(min, max))
@@ -136,7 +150,8 @@ namespace NToolbox
 		/// <param name="min">The minimum value to test.</param>
 		/// <param name="max">The maximum value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsBetween(IComparable value, IComparable min, IComparable max, string paramName)
 		{
 			if (!value.IsBetween(min, max))
@@ -153,7 +168,8 @@ namespace NToolbox
 		/// <param name="max">The maximum value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="message">A message that describes the error.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsBetween(IComparable value, IComparable min, IComparable max, string paramName, string message)
 		{
 			if (!value.IsBetween(min, max))
@@ -167,7 +183,8 @@ namespace NToolbox
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsEqual(IComparable value, IComparable referenceValue)
 		{
 			if (!value.IsEqual(referenceValue))
@@ -182,7 +199,8 @@ namespace NToolbox
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsEqual(IComparable value, IComparable referenceValue, string paramName)
 		{
 			if (!value.IsEqual(referenceValue))
@@ -198,7 +216,8 @@ namespace NToolbox
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="message">A message that describes the error.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsEqual(IComparable value, IComparable referenceValue, string paramName, string message)
 		{
 			if (!value.IsEqual(referenceValue))
@@ -212,7 +231,8 @@ namespace NToolbox
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsGreaterOrEqual(IComparable value, IComparable referenceValue)
 		{
 			if (!value.IsGreaterOrEqual(referenceValue))
@@ -227,7 +247,8 @@ namespace NToolbox
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsGreaterOrEqual(IComparable value, IComparable referenceValue, string paramName)
 		{
 			if (!value.IsGreaterOrEqual(referenceValue))
@@ -243,7 +264,8 @@ namespace NToolbox
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="message">A message that describes the error.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsGreaterOrEqual(IComparable value, IComparable referenceValue, string paramName, string message)
 		{
 			if (!value.IsGreaterOrEqual(referenceValue))
@@ -257,7 +279,8 @@ namespace NToolbox
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsGreater(IComparable value, IComparable referenceValue)
 		{
 			if (!value.IsGreater(referenceValue))
@@ -272,7 +295,8 @@ namespace NToolbox
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsGreater(IComparable value, IComparable referenceValue, string paramName)
 		{
 			if (!value.IsGreater(referenceValue))
@@ -288,7 +312,8 @@ namespace NToolbox
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="message">A message that describes the error.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsGreater(IComparable value, IComparable referenceValue, string paramName, string message)
 		{
 			if (!value.IsGreater(referenceValue))
@@ -302,7 +327,8 @@ namespace NToolbox
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsSmallerOrEqual(IComparable value, IComparable referenceValue)
 		{
 			if (!value.IsSmallerOrEqual(referenceValue))
@@ -317,7 +343,8 @@ namespace NToolbox
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsSmallerOrEqual(IComparable value, IComparable referenceValue, string paramName)
 		{
 			if (!value.IsSmallerOrEqual(referenceValue))
@@ -333,7 +360,8 @@ namespace NToolbox
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="message">A message that describes the error.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsSmallerOrEqual(IComparable value, IComparable referenceValue, string paramName, string message)
 		{
 			if (!value.IsSmallerOrEqual(referenceValue))
@@ -347,7 +375,8 @@ namespace NToolbox
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsSmaller(IComparable value, IComparable referenceValue)
 		{
 			if (!value.IsSmaller(referenceValue))
@@ -362,7 +391,8 @@ namespace NToolbox
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsSmaller(IComparable value, IComparable referenceValue, string paramName)
 		{
 			if (!value.IsSmaller(referenceValue))
@@ -378,7 +408,8 @@ namespace NToolbox
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="message">A message that describes the error.</param>
-		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
+		/// range.</exception>
 		public static void IsSmaller(IComparable value, IComparable referenceValue, string paramName, string message)
 		{
 			if (!value.IsSmaller(referenceValue))
@@ -393,8 +424,10 @@ namespace NToolbox
 		/// Checks whether the specified string is not <strong>null</strong> or an empty string.
 		/// </summary>
 		/// <param name="str">The string to test.</param>
-		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>str</em> is <strong>empty</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>str</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentEmptyException"><em>str</em> is
+		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(string str)
 		{
 			if (str == null)
@@ -412,8 +445,10 @@ namespace NToolbox
 		/// </summary>
 		/// <param name="str">The string to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>str</em> is <strong>empty</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>str</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentEmptyException"><em>str</em> is
+		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(string str, string paramName)
 		{
 			if (str == null)
@@ -433,8 +468,10 @@ namespace NToolbox
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="messageArgNull">A message that describes the null error.</param>
 		/// <param name="messageArgEmpty">A message that describes the empty error.</param>
-		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>str</em> is <strong>empty</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>str</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentEmptyException"><em>str</em> is
+		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(string str, string paramName, string messageArgNull, string messageArgEmpty)
 		{
 			if (str == null)
@@ -448,11 +485,14 @@ namespace NToolbox
 		}
 
 		/// <summary>
-		/// Checks whether a specified string is not <strong>null</strong>, empty, or consists only of white-space characters.
+		/// Checks whether a specified string is not <strong>null</strong>, empty, or consists only
+		/// of white-space characters.
 		/// </summary>
 		/// <param name="str">The string to test.</param>
-		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is <strong>whitespace</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>str</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is
+		/// <strong>whitespace</strong>.</exception>
 		public static void IsNotNullOrWhiteSpace(string str)
 		{
 			if (str == null)
@@ -466,12 +506,15 @@ namespace NToolbox
 		}
 
 		/// <summary>
-		/// Checks whether a specified string is not <strong>null</strong>, empty, or consists only of white-space characters.
+		/// Checks whether a specified string is not <strong>null</strong>, empty, or consists only
+		/// of white-space characters.
 		/// </summary>
 		/// <param name="str">The string to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
-		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is <strong>whitespace</strong>.</exception>
+		/// <exception cref="ArgumentNullException"><em>str</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is
+		/// <strong>whitespace</strong>.</exception>
 		public static void IsNotNullOrWhiteSpace(string str, string paramName)
 		{
 			if (str == null)
@@ -485,14 +528,18 @@ namespace NToolbox
 		}
 
 		/// <summary>
-		/// Checks whether a specified string is not <strong>null</strong>, empty, or consists only of white-space characters.
+		/// Checks whether a specified string is not <strong>null</strong>, empty, or consists only
+		/// of white-space characters.
 		/// </summary>
 		/// <param name="str">The string to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="messageArgNull">A message that describes the null error.</param>
-		/// <param name="messageArgWhiteSpace">A message that describes the whitespace error.</param>
-		/// <exception cref="ArgumentNullException"><em>str</em> is <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is <strong>whitespace</strong>.</exception>
+		/// <param name="messageArgWhiteSpace">A message that describes the whitespace
+		/// error.</param>
+		/// <exception cref="ArgumentNullException"><em>str</em> is
+		/// <strong>null</strong>.</exception>
+		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is
+		/// <strong>whitespace</strong>.</exception>
 		public static void IsNotNullOrWhiteSpace(string str, string paramName, string messageArgNull, string messageArgWhiteSpace)
 		{
 			if (str == null)

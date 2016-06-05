@@ -56,7 +56,8 @@
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Globalization\CountryAlpha2.cs" />
     <Compile Include="Globalization\CountryAlpha3.cs" />
-    <Compile Include="Globalization\CountryNumeric.cs" />
+    <Compile Include="Globalization\Country.cs" />
+    <Compile Include="Globalization\CountryExtension.cs" />
     <Compile Include="Globalization\Culture.cs" />
     <Compile Include="Globalization\CultureExtension.cs" />
     <Compile Include="Globalization\LanguageAlpha2.cs" />

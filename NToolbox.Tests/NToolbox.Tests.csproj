@@ -54,6 +54,7 @@
     <Compile Include="NToolbox\Extensions\NumericExtensionTest.cs" />
     <Compile Include="NToolbox\Extensions\StringExtensionTest.cs" />
     <Compile Include="NToolbox\Globalization\CountryTest.cs" />
+    <Compile Include="NToolbox\Globalization\CountryExtensionTest.cs" />
     <Compile Include="NToolbox\Globalization\CultureExtensionTest.cs" />
     <Compile Include="NToolbox\Globalization\CultureTest.cs" />
     <Compile Include="NToolbox\Globalization\LanguageTest.cs" />
@@ -66,11 +67,12 @@
     <Compile Include="NToolbox\Utils\DateUtilTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCaseSources\AsciiTestCaseSource.cs" />
+    <Compile Include="TestCaseSources\CountryExtensionTestCaseSource.cs" />
+    <Compile Include="TestCaseSources\CountryTestCaseSource.cs" />
     <Compile Include="TestCaseSources\SamplerateTestCaseSource.cs" />
     <Compile Include="TestCaseSources\BitrateTestCaseSource.cs" />
     <Compile Include="TestCaseSources\CountryAlpha2TestCaseSource.cs" />
     <Compile Include="TestCaseSources\CountryAlpha3TestCaseSource.cs" />
-    <Compile Include="TestCaseSources\CountryNumericTestCaseSource.cs" />
     <Compile Include="TestCaseSources\CultureTestCaseSource.cs" />
     <Compile Include="TestCaseSources\HttpCodeTestCaseSource.cs" />
     <Compile Include="TestCaseSources\LanguageAlpha2TestCaseSource.cs" />

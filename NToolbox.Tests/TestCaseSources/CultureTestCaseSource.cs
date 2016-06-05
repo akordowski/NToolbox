@@ -174,8 +174,8 @@ namespace NToolbox.Tests.TestCaseSources
 			yield return new TestCaseData(Culture.kk_KZ, "kk-KZ", 0x043F);
 			yield return new TestCaseData(Culture.km, "km", 0x0053);
 			yield return new TestCaseData(Culture.km_KH, "km-KH", 0x0453);
-			yield return new TestCaseData(Culture.qut, "qut", 0x0086);
-			yield return new TestCaseData(Culture.qut_GT, "qut-GT", 0x0486);
+			yield return new TestCaseData(Culture.quc, "quc", 0x0086);
+			yield return new TestCaseData(Culture.quc_Latn_GT, "quc-Latn-GT", 0x0486);
 			yield return new TestCaseData(Culture.rw, "rw", 0x0087);
 			yield return new TestCaseData(Culture.rw_RW, "rw-RW", 0x0487);
 			yield return new TestCaseData(Culture.sw, "sw", 0x0041);

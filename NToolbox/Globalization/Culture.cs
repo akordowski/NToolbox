@@ -834,12 +834,12 @@
 		/// <summary>
 		/// K'iche
 		/// </summary>
-		qut = 0x0086,
+		quc = 0x0086,
 
 		/// <summary>
 		/// K'iche (Guatemala)
 		/// </summary>
-		qut_GT = 0x0486,
+		quc_Latn_GT = 0x0486,
 
 		/// <summary>
 		/// Kinyarwanda

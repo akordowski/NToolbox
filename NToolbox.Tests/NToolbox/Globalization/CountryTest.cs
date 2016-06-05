@@ -1,4 +1,5 @@
-﻿using NToolbox.Tests.TestCaseSources;
+﻿using NToolbox.Globalization;
+using NToolbox.Tests.TestCaseSources;
 using NUnit.Framework;
 
 namespace NToolbox.Tests.NToolbox.Globalization
@@ -18,10 +19,10 @@ namespace NToolbox.Tests.NToolbox.Globalization
 			Assert.That(countryAlpha3, Is.EqualTo(expectedCountryAlpha3));
 		}
 
-		[TestCaseSource(typeof(CountryNumericTestCaseSource), "CountryNumeric_TestCases")]
-		public void CountryNumeric_Contains_Valid_Value(string countryNumeric, string expectedCountryNumeric)
+		[TestCaseSource(typeof(CountryTestCaseSource), "Country_TestCases")]
+		public void CountryNumeric_Contains_Valid_Value(Country country, int expectedCountry)
 		{
-			Assert.That(countryNumeric, Is.EqualTo(expectedCountryNumeric));
+			Assert.That((int)country, Is.EqualTo(expectedCountry));
 		}
 		#endregion
 	}

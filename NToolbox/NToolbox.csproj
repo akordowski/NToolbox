@@ -46,6 +46,15 @@
   <ItemGroup>
     <Compile Include="Data\Common\INotifyObject.cs" />
     <Compile Include="Data\Common\NotifyObject.cs" />
+    <Compile Include="Data\Exchange\DataExchange.cs" />
+    <Compile Include="Data\Exchange\DataExport.cs" />
+    <Compile Include="Data\Exchange\DataImport.cs" />
+    <Compile Include="Data\Exchange\IExchange.cs" />
+    <Compile Include="Data\Exchange\IExport.cs" />
+    <Compile Include="Data\Exchange\IImport.cs" />
+    <Compile Include="Data\IConverter.cs" />
+    <Compile Include="Data\IReader.cs" />
+    <Compile Include="Data\IWriter.cs" />
     <Compile Include="Drawing\Printing\IPrintable.cs" />
     <Compile Include="EventArgs.cs" />
     <Compile Include="Extensions\CollectionExtension.cs" />

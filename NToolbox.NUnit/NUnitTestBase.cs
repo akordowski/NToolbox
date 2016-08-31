@@ -9,6 +9,11 @@ namespace NToolbox.NUnit
 	public abstract class NUnitTestBase
 	{
 		#region Protected Methods
+		protected void AssertThrowsNothing(Action method)
+		{
+			Assert.That(() => method(), Throws.Nothing);
+		}
+
 		protected void AssertThrowsException<T>(Action method, string expectedParameter) where T : Exception
 		{
 			Assert.That(() => method(),

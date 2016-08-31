@@ -12,25 +12,61 @@ namespace NToolbox.NUnit.Data
 		#endregion
 
 		#region Public Static Properties
-		public static ReadOnlyDictionary<Culture, string> ArgumentEmptyExceptionDefaultMessage
+		public static ReadOnlyDictionary<Culture, string> ArgumentExceptionDefaultMessage
 		{
 			get
 			{
 				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
-				dict.Add(Culture.en, "Exception of type 'NToolbox.ArgumentEmptyException' was thrown.");
-				dict.Add(Culture.de, "Eine Ausnahme vom Typ \"NToolbox.ArgumentEmptyException\" wurde ausgelöst.");
+				dict.Add(Culture.en, "Exception of type 'System.ArgumentException' was thrown.");
+				dict.Add(Culture.de, "Eine Ausnahme vom Typ \"System.ArgumentException\" wurde ausgelöst.");
 
 				return new ReadOnlyDictionary<Culture, string>(dict);
 			}
 		}
 
-		public static ReadOnlyDictionary<Culture, string> ArgumentEmptyExceptionMessage
+		public static ReadOnlyDictionary<Culture, string> ArgumentExceptionEmptyMessage
 		{
 			get
 			{
 				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
 				dict.Add(Culture.en, "Value cannot be empty.");
 				dict.Add(Culture.de, "Der Wert darf nicht leer sein.");
+
+				return new ReadOnlyDictionary<Culture, string>(dict);
+			}
+		}
+
+		public static ReadOnlyDictionary<Culture, string> ArgumentExceptionIsFalseMessage
+		{
+			get
+			{
+				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
+				dict.Add(Culture.en, "Value cannot be true.");
+				dict.Add(Culture.de, "Der Wert darf nicht true sein.");
+
+				return new ReadOnlyDictionary<Culture, string>(dict);
+			}
+		}
+
+		public static ReadOnlyDictionary<Culture, string> ArgumentExceptionIsTrueMessage
+		{
+			get
+			{
+				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
+				dict.Add(Culture.en, "Value cannot be false.");
+				dict.Add(Culture.de, "Der Wert darf nicht false sein.");
+
+				return new ReadOnlyDictionary<Culture, string>(dict);
+			}
+		}
+
+		public static ReadOnlyDictionary<Culture, string> ArgumentExceptionWhiteSpaceMessage
+		{
+			get
+			{
+				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
+				dict.Add(Culture.en, "Value cannot consists only of white-space characters.");
+				dict.Add(Culture.de, "Der Wert darf nicht nur aus Leerzeichen bestehen.");
 
 				return new ReadOnlyDictionary<Culture, string>(dict);
 			}
@@ -55,30 +91,6 @@ namespace NToolbox.NUnit.Data
 				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
 				dict.Add(Culture.en, "Value cannot be null.");
 				dict.Add(Culture.de, "Der Wert darf nicht NULL sein.");
-
-				return new ReadOnlyDictionary<Culture, string>(dict);
-			}
-		}
-
-		public static ReadOnlyDictionary<Culture, string> ArgumentWhiteSpaceExceptionDefaultMessage
-		{
-			get
-			{
-				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
-				dict.Add(Culture.en, "Exception of type 'NToolbox.ArgumentWhiteSpaceException' was thrown.");
-				dict.Add(Culture.de, "Eine Ausnahme vom Typ \"NToolbox.ArgumentWhiteSpaceException\" wurde ausgelöst.");
-
-				return new ReadOnlyDictionary<Culture, string>(dict);
-			}
-		}
-
-		public static ReadOnlyDictionary<Culture, string> ArgumentWhiteSpaceExceptionMessage
-		{
-			get
-			{
-				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
-				dict.Add(Culture.en, "Value cannot consists only of white-space characters.");
-				dict.Add(Culture.de, "Der Wert darf nicht nur aus Leerzeichen bestehen.");
 
 				return new ReadOnlyDictionary<Culture, string>(dict);
 			}

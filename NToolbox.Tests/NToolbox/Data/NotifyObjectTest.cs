@@ -1,7 +1,5 @@
-﻿using NToolbox.Data;
+﻿using NToolbox.Data.Common;
 using NUnit.Framework;
-using System;
-using System.Collections;
 
 namespace NToolbox.Tests.NToolbox.Data
 {

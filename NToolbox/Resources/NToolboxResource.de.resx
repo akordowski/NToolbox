@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ArgumentEmptyException_Message" xml:space="preserve">
+  <data name="ArgumentException_BooleanIsFalseMessage" xml:space="preserve">
+    <value>Der Wert darf nicht true sein.</value>
+  </data>
+  <data name="ArgumentException_BooleanIsTrueMessage" xml:space="preserve">
+    <value>Der Wert darf nicht false sein.</value>
+  </data>
+  <data name="ArgumentException_EmptyMessage" xml:space="preserve">
     <value>Der Wert darf nicht leer sein.</value>
   </data>
-  <data name="ArgumentWhiteSpaceException_Message" xml:space="preserve">
+  <data name="ArgumentException_WhiteSpaceMessage" xml:space="preserve">
     <value>Der Wert darf nicht nur aus Leerzeichen bestehen.</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
 ﻿using NToolbox.Extensions;
+using NToolbox.Resources;
 using System;
 using System.Collections;
 
@@ -10,7 +11,175 @@ namespace NToolbox
 	/// </summary>
 	public static class Precondition
 	{
-		#region Public Static Methods - Default
+		#region Public Static Methods - Boolean
+		/// <summary>
+		/// Checks whether the specified condition is <strong>false</strong>.
+		/// </summary>
+		/// <param name="condition">The condition to test.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>true</strong>.</exception>
+		public static void IsFalse(bool condition)
+		{
+			if (condition)
+			{
+				string message = Resource.GetString(ResourceName.ArgumentException_BooleanIsTrueMessage);
+				throw new ArgumentException(message);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>false</strong>.
+		/// </summary>
+		/// <param name="condition">The condition to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>true</strong>.</exception>
+		public static void IsFalse(bool condition, string paramName)
+		{
+			if (condition)
+			{
+				string message = Resource.GetString(ResourceName.ArgumentException_BooleanIsTrueMessage);
+				throw new ArgumentException(message, paramName);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>false</strong>.
+		/// </summary>
+		/// <param name="condition">The condition to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <param name="message">A message that describes the error.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>falsetrue</strong>.</exception>
+		public static void IsFalse(bool condition, string paramName, string message)
+		{
+			if (condition)
+			{
+				throw new ArgumentException(message, paramName);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>false</strong>.
+		/// </summary>
+		/// <param name="conditionDelegate">The condition to test.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>true</strong>.</exception>
+		public static void IsFalse(Func<bool> conditionDelegate)
+		{
+			IsFalse(conditionDelegate());
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>false</strong>.
+		/// </summary>
+		/// <param name="conditionDelegate">The condition to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>true</strong>.</exception>
+		public static void IsFalse(Func<bool> conditionDelegate, string paramName)
+		{
+			IsFalse(conditionDelegate(), paramName);
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>false</strong>.
+		/// </summary>
+		/// <param name="conditionDelegate">The condition to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <param name="message">A message that describes the error.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>true</strong>.</exception>
+		public static void IsFalse(Func<bool> conditionDelegate, string paramName, string message)
+		{
+			IsFalse(conditionDelegate(), paramName, message);
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>true</strong>.
+		/// </summary>
+		/// <param name="condition">The condition to test.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>false</strong>.</exception>
+		public static void IsTrue(bool condition)
+		{
+			if (!condition)
+			{
+				string message = Resource.GetString(ResourceName.ArgumentException_BooleanIsTrueMessage);
+				throw new ArgumentException(message);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>true</strong>.
+		/// </summary>
+		/// <param name="condition">The condition to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is 
+		/// <strong>false</strong>.</exception>
+		public static void IsTrue(bool condition, string paramName)
+		{
+			if (!condition)
+			{
+				string message = Resource.GetString(ResourceName.ArgumentException_BooleanIsTrueMessage);
+				throw new ArgumentException(message, paramName);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>true</strong>.
+		/// </summary>
+		/// <param name="condition">The condition to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <param name="message">A message that describes the error.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>false</strong>.</exception>
+		public static void IsTrue(bool condition, string paramName, string message)
+		{
+			if (!condition)
+			{
+				throw new ArgumentException(message, paramName);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>true</strong>.
+		/// </summary>
+		/// <param name="conditionDelegate">The condition to test.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>false</strong>.</exception>
+		public static void IsTrue(Func<bool> conditionDelegate)
+		{
+			IsTrue(conditionDelegate());
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>true</strong>.
+		/// </summary>
+		/// <param name="conditionDelegate">The condition to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>false</strong>.</exception>
+		public static void IsTrue(Func<bool> conditionDelegate, string paramName)
+		{
+			IsTrue(conditionDelegate(), paramName);
+		}
+
+		/// <summary>
+		/// Checks whether the specified condition is <strong>true</strong>.
+		/// </summary>
+		/// <param name="conditionDelegate">The condition to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <param name="message">A message that describes the error.</param>
+		/// <exception cref="ArgumentException"><em>value</em> is
+		/// <strong>false</strong>.</exception>
+		public static void IsTrue(Func<bool> conditionDelegate, string paramName, string message)
+		{
+			IsTrue(conditionDelegate(), paramName, message);
+		}
+		#endregion
+
+		#region Public Static Methods - Object
 		/// <summary>
 		/// Checks whether the specified object is not <strong>null</strong>.
 		/// </summary>
@@ -65,7 +234,7 @@ namespace NToolbox
 		/// <param name="col">The collection to test.</param>
 		/// <exception cref="ArgumentNullException"><em>col</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>col</em> is
+		/// <exception cref="ArgumentException"><em>col</em> is
 		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(ICollection col)
 		{
@@ -75,7 +244,8 @@ namespace NToolbox
 			}
 			else if (col.Count == 0)
 			{
-				throw new ArgumentEmptyException();
+				string message = Resource.GetString(ResourceName.ArgumentException_EmptyMessage);
+				throw new ArgumentException(message);
 			}
 		}
 
@@ -87,7 +257,7 @@ namespace NToolbox
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <exception cref="ArgumentNullException"><em>col</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>col</em> is
+		/// <exception cref="ArgumentException"><em>col</em> is
 		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(ICollection col, string paramName)
 		{
@@ -97,7 +267,8 @@ namespace NToolbox
 			}
 			else if (col.Count == 0)
 			{
-				throw new ArgumentEmptyException(paramName);
+				string message = Resource.GetString(ResourceName.ArgumentException_EmptyMessage);
+				throw new ArgumentException(message, paramName);
 			}
 		}
 
@@ -111,7 +282,7 @@ namespace NToolbox
 		/// <param name="messageArgEmpty">A message that describes the empty error.</param>
 		/// <exception cref="ArgumentNullException"><em>col</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>col</em> is
+		/// <exception cref="ArgumentException"><em>col</em> is
 		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(ICollection col, string paramName, string messageArgNull, string messageArgEmpty)
 		{
@@ -121,7 +292,7 @@ namespace NToolbox
 			}
 			else if (col.Count == 0)
 			{
-				throw new ArgumentEmptyException(paramName, messageArgEmpty);
+				throw new ArgumentException(messageArgEmpty, paramName);
 			}
 		}
 		#endregion
@@ -426,7 +597,7 @@ namespace NToolbox
 		/// <param name="str">The string to test.</param>
 		/// <exception cref="ArgumentNullException"><em>str</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>str</em> is
+		/// <exception cref="ArgumentException"><em>str</em> is
 		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(string str)
 		{
@@ -436,7 +607,8 @@ namespace NToolbox
 			}
 			else if (string.IsNullOrEmpty(str))
 			{
-				throw new ArgumentEmptyException();
+				string message = Resource.GetString(ResourceName.ArgumentException_EmptyMessage);
+				throw new ArgumentException(message);
 			}
 		}
 
@@ -447,7 +619,7 @@ namespace NToolbox
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <exception cref="ArgumentNullException"><em>str</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>str</em> is
+		/// <exception cref="ArgumentException"><em>str</em> is
 		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(string str, string paramName)
 		{
@@ -457,7 +629,8 @@ namespace NToolbox
 			}
 			else if (string.IsNullOrEmpty(str))
 			{
-				throw new ArgumentEmptyException(paramName);
+				string message = Resource.GetString(ResourceName.ArgumentException_EmptyMessage);
+				throw new ArgumentException(message, paramName);
 			}
 		}
 
@@ -470,7 +643,7 @@ namespace NToolbox
 		/// <param name="messageArgEmpty">A message that describes the empty error.</param>
 		/// <exception cref="ArgumentNullException"><em>str</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentEmptyException"><em>str</em> is
+		/// <exception cref="ArgumentException"><em>str</em> is
 		/// <strong>empty</strong>.</exception>
 		public static void IsNotNullOrEmpty(string str, string paramName, string messageArgNull, string messageArgEmpty)
 		{
@@ -480,7 +653,7 @@ namespace NToolbox
 			}
 			else if (string.IsNullOrEmpty(str))
 			{
-				throw new ArgumentEmptyException(paramName, messageArgEmpty);
+				throw new ArgumentException(messageArgEmpty, paramName);
 			}
 		}
 
@@ -491,7 +664,7 @@ namespace NToolbox
 		/// <param name="str">The string to test.</param>
 		/// <exception cref="ArgumentNullException"><em>str</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is
+		/// <exception cref="ArgumentException"><em>str</em> is
 		/// <strong>whitespace</strong>.</exception>
 		public static void IsNotNullOrWhiteSpace(string str)
 		{
@@ -501,7 +674,8 @@ namespace NToolbox
 			}
 			else if (string.IsNullOrWhiteSpace(str))
 			{
-				throw new ArgumentWhiteSpaceException();
+				string message = Resource.GetString(ResourceName.ArgumentException_WhiteSpaceMessage);
+				throw new ArgumentException(message);
 			}
 		}
 
@@ -513,7 +687,7 @@ namespace NToolbox
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <exception cref="ArgumentNullException"><em>str</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is
+		/// <exception cref="ArgumentException"><em>str</em> is
 		/// <strong>whitespace</strong>.</exception>
 		public static void IsNotNullOrWhiteSpace(string str, string paramName)
 		{
@@ -523,7 +697,8 @@ namespace NToolbox
 			}
 			else if (string.IsNullOrWhiteSpace(str))
 			{
-				throw new ArgumentWhiteSpaceException(paramName);
+				string message = Resource.GetString(ResourceName.ArgumentException_WhiteSpaceMessage);
+				throw new ArgumentException(message, paramName);
 			}
 		}
 
@@ -538,7 +713,7 @@ namespace NToolbox
 		/// error.</param>
 		/// <exception cref="ArgumentNullException"><em>str</em> is
 		/// <strong>null</strong>.</exception>
-		/// <exception cref="ArgumentWhiteSpaceException"><em>str</em> is
+		/// <exception cref="ArgumentException"><em>str</em> is
 		/// <strong>whitespace</strong>.</exception>
 		public static void IsNotNullOrWhiteSpace(string str, string paramName, string messageArgNull, string messageArgWhiteSpace)
 		{
@@ -548,7 +723,7 @@ namespace NToolbox
 			}
 			else if (string.IsNullOrWhiteSpace(str))
 			{
-				throw new ArgumentWhiteSpaceException(paramName, messageArgWhiteSpace);
+				throw new ArgumentException(messageArgWhiteSpace, paramName);
 			}
 		}
 		#endregion

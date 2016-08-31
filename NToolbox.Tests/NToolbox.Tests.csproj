@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NToolbox\ArgumentEmptyExceptionTest.cs" />
-    <Compile Include="NToolbox\ArgumentWhiteSpaceExceptionTest.cs" />
     <Compile Include="NToolbox\Data\NotifyObjectTest.cs" />
     <Compile Include="NToolbox\EventArgsTests.cs" />
     <Compile Include="NToolbox\Extensions\CollectionExtensionTest.cs" />

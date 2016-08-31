@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArgumentEmptyException.cs" />
-    <Compile Include="ArgumentWhiteSpaceException.cs" />
-    <Compile Include="Data\INotifyObject.cs" />
-    <Compile Include="Data\NotifyObject.cs" />
+    <Compile Include="Data\Common\INotifyObject.cs" />
+    <Compile Include="Data\Common\NotifyObject.cs" />
     <Compile Include="EventArgs.cs" />
     <Compile Include="Extensions\CollectionExtension.cs" />
     <Compile Include="Extensions\ComparableExtension.cs" />

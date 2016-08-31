@@ -9,74 +9,122 @@ namespace NToolbox.Tests.TestCaseSources
 {
 	public static class PreconditionTestCaseSource
 	{
-		#region Test Case Sources
-		public static IEnumerable IsNotNullOrEmpty_Throws_Nothing_1()
+		#region Test Case Sources - Boolean
+		public static IEnumerable IsFalse_With_Invalid_Condition_Throws_Nothing_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataException<bool>(
+				new bool[] { true },
+				ExceptionData.ArgumentExceptionIsTrueMessage);
+		}
+
+		public static IEnumerable IsFalse_With_Invalid_Condition_And_ParamName_Throws_ArgumentException_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<bool>(
+				new bool[] { true },
+				ExceptionData.ArgumentExceptionIsTrueMessage);
+		}
+
+		public static IEnumerable IsFalse_With_Invalid_Condition_And_ParamName_And_Message_Throws_ArgumentException_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<bool>(
+				new bool[] { true },
+				ExceptionData.ArgumentExceptionIsTrueMessage,
+				ExceptionData.ArgumentExceptionDefaultMessage);
+		}
+
+		public static IEnumerable IsTrue_With_Invalid_Condition_Throws_Nothing_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataException<bool>(
+				new bool[] { false },
+				ExceptionData.ArgumentExceptionIsTrueMessage);
+		}
+
+		public static IEnumerable IsTrue_With_Invalid_Condition_And_ParamName_Throws_ArgumentException_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<bool>(
+				new bool[] { false },
+				ExceptionData.ArgumentExceptionIsTrueMessage);
+		}
+
+		public static IEnumerable IsTrue_With_Invalid_Condition_And_ParamName_And_Message_Throws_ArgumentException_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<bool>(
+				new bool[] { false },
+				ExceptionData.ArgumentExceptionIsTrueMessage,
+				ExceptionData.ArgumentExceptionDefaultMessage);
+		}
+		#endregion
+
+		#region Test Case Sources - Object
+		public static IEnumerable IsNotNull_With_Valid_Object_Throws_Nothing_TestCases()
 		{
 			yield return new TestCaseData(new Object());
 		}
 
-		public static IEnumerable IsNotNullOrEmpty_Throws_Nothing_2()
+		public static IEnumerable IsNotNull_With_Valid_Object_And_ParamName_Throws_Nothing_TestCases()
 		{
 			yield return new TestCaseData(new Object(), ExceptionData.Parameter);
 		}
 
-		public static IEnumerable IsNotNullOrEmpty_Throws_Nothing_3()
+		public static IEnumerable IsNotNull_With_Valid_Object_And_ParamName_And_Message_Throws_Nothing_TestCases()
 		{
 			yield return new TestCaseData(new Object(), ExceptionData.Parameter, ExceptionData.Message);
 		}
 
-		public static IEnumerable IsNotNull_Throws_ArgumentNullException_TestCases_1()
+		public static IEnumerable IsNotNull_With_Null_Object_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataException<object>(
 				new object[] { null },
 				ExceptionData.ArgumentNullExceptionMessage);
 		}
 
-		public static IEnumerable IsNotNull_Throws_ArgumentNullException_TestCases_2()
+		public static IEnumerable IsNotNull_With_Null_Object_And_ParamName_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<object>(
 				new object[] { null },
 				ExceptionData.ArgumentNullExceptionMessage);
 		}
 
-		public static IEnumerable IsNotNull_Throws_ArgumentNullException_TestCases_3()
+		public static IEnumerable IsNotNull_With_Null_Object_And_ParamName_And_Message_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<object>(
 				new object[] { null },
 				ExceptionData.ArgumentNullExceptionMessage,
 				ExceptionData.ArgumentNullExceptionDefaultMessage);
 		}
+		#endregion
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_Nothing_1()
+		#region Test Case Sources - ICollection
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Valid_Collection_Throws_Nothing_TestCases()
 		{
 			yield return new TestCaseData(new List<object>(new[] { new Object() }));
 		}
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_Nothing_2()
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Valid_Collection_And_ParamName_Throws_Nothing_TestCases()
 		{
 			yield return new TestCaseData(new List<object>(new[] { new Object() }), ExceptionData.Parameter);
 		}
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_Nothing_3()
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Valid_Collection_And_ParamName_And_Message_Throws_Nothing_TestCases()
 		{
 			yield return new TestCaseData(new List<object>(new[] { new Object() }), ExceptionData.Parameter, ExceptionData.Message);
 		}
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_1()
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Null_Collection_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataException<ICollection>(
 				new ICollection[] { null },
 				ExceptionData.ArgumentNullExceptionMessage);
 		}
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_2()
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Null_Collection_And_ParamName_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<ICollection>(
 				new ICollection[] { null },
 				ExceptionData.ArgumentNullExceptionMessage);
 		}
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_3()
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Null_Collection_And_ParamName_And_Message_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<ICollection>(
 				new ICollection[] { null },
@@ -84,61 +132,45 @@ namespace NToolbox.Tests.TestCaseSources
 				ExceptionData.ArgumentNullExceptionDefaultMessage);
 		}
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_1()
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Empty_Collection_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataException<ICollection>(
 				new ICollection[] { new List<object>() },
-				ExceptionData.ArgumentEmptyExceptionMessage);
+				ExceptionData.ArgumentExceptionEmptyMessage);
 		}
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_2()
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Empty_Collection_And_ParamName_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<ICollection>(
 				new ICollection[] { new List<object>() },
-				ExceptionData.ArgumentEmptyExceptionMessage);
+				ExceptionData.ArgumentExceptionEmptyMessage);
 		}
 
-		public static IEnumerable Collection_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_3()
+		public static IEnumerable Collection_IsNotNullOrEmpty_With_Empty_Collection_And_ParamName_And_Message_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<ICollection>(
 				new ICollection[] { new List<object>() },
-				ExceptionData.ArgumentEmptyExceptionMessage,
-				ExceptionData.ArgumentEmptyExceptionDefaultMessage);
+				ExceptionData.ArgumentExceptionEmptyMessage,
+				ExceptionData.ArgumentExceptionDefaultMessage);
 		}
+		#endregion
 
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_Nothing_1()
-		{
-			yield return new TestCaseData(" ");
-			yield return new TestCaseData("abc");
-		}
-
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_Nothing_2()
-		{
-			yield return new TestCaseData(" ", ExceptionData.Parameter);
-			yield return new TestCaseData("abc", ExceptionData.Parameter);
-		}
-
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_Nothing_3()
-		{
-			yield return new TestCaseData(" ", ExceptionData.Parameter, ExceptionData.Message);
-			yield return new TestCaseData("abc", ExceptionData.Parameter, ExceptionData.Message);
-		}
-
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_1()
+		#region Test Case Sources - String
+		public static IEnumerable String_IsNotNullOrEmpty_With_Null_String_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataException<string>(
 				new string[] { null },
 				ExceptionData.ArgumentNullExceptionMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_2()
+		public static IEnumerable String_IsNotNullOrEmpty_With_Null_String_And_ParamName_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<string>(
 				new string[] { null },
 				ExceptionData.ArgumentNullExceptionMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_ArgumentNullException_TestCases_3()
+		public static IEnumerable String_IsNotNullOrEmpty_With_Null_String_And_ParamName_And_Message_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<string>(
 				new string[] { null },
@@ -146,61 +178,43 @@ namespace NToolbox.Tests.TestCaseSources
 				ExceptionData.ArgumentNullExceptionDefaultMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_1()
+		public static IEnumerable String_IsNotNullOrEmpty_With_Empty_String_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataException<string>(
 				new string[] { "" },
-				ExceptionData.ArgumentEmptyExceptionMessage);
+				ExceptionData.ArgumentExceptionEmptyMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_2()
+		public static IEnumerable String_IsNotNullOrEmpty_With_Empty_String_And_ParamName_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<string>(
 				new string[] { "" },
-				ExceptionData.ArgumentEmptyExceptionMessage);
+				ExceptionData.ArgumentExceptionEmptyMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrEmpty_Throws_ArgumentEmptyException_TestCases_3()
+		public static IEnumerable String_IsNotNullOrEmpty_With_Empty_String_And_ParamName_And_Message_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<string>(
 				new string[] { "" },
-				ExceptionData.ArgumentEmptyExceptionMessage,
-				ExceptionData.ArgumentEmptyExceptionDefaultMessage);
+				ExceptionData.ArgumentExceptionEmptyMessage,
+				ExceptionData.ArgumentExceptionDefaultMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_Nothing_1()
-		{
-			yield return new TestCaseData("abc");
-			yield return new TestCaseData(" abc ");
-		}
-
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_Nothing_2()
-		{
-			yield return new TestCaseData("abc", ExceptionData.Parameter);
-			yield return new TestCaseData(" abc ", ExceptionData.Parameter);
-		}
-
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_Nothing_3()
-		{
-			yield return new TestCaseData("abc", ExceptionData.Parameter, ExceptionData.Message);
-			yield return new TestCaseData(" abc ", ExceptionData.Parameter, ExceptionData.Message);
-		}
-
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_ArgumentNullException_TestCases_1()
+		public static IEnumerable String_IsNotNullOrWhiteSpace_With_Null_String_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataException<string>(
 				new string[] { null },
 				ExceptionData.ArgumentNullExceptionMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_ArgumentNullException_TestCases_2()
+		public static IEnumerable String_IsNotNullOrWhiteSpace_With_Null_String_And_ParamName_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<string>(
 				new string[] { null },
 				ExceptionData.ArgumentNullExceptionMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_ArgumentNullException_TestCases_3()
+		public static IEnumerable String_IsNotNullOrWhiteSpace_With_Null_String_And_ParamName_And_Message_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<string>(
 				new string[] { null },
@@ -208,26 +222,26 @@ namespace NToolbox.Tests.TestCaseSources
 				ExceptionData.ArgumentNullExceptionDefaultMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException_TestCases_1()
+		public static IEnumerable String_IsNotNullOrWhiteSpace_With_Invalid_String_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataException<string>(
 				new string[] { "", " " },
-				ExceptionData.ArgumentWhiteSpaceExceptionMessage);
+				ExceptionData.ArgumentExceptionWhiteSpaceMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException_TestCases_2()
+		public static IEnumerable String_IsNotNullOrWhiteSpace_With_Invalid_String_And_ParamName_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<string>(
 				new string[] { "", " " },
-				ExceptionData.ArgumentWhiteSpaceExceptionMessage);
+				ExceptionData.ArgumentExceptionWhiteSpaceMessage);
 		}
 
-		public static IEnumerable String_IsNotNullOrWhiteSpace_Throws_ArgumentWhiteSpaceException_TestCases_3()
+		public static IEnumerable String_IsNotNullOrWhiteSpace_With_Invalid_String_And_ParamName_And_Message_Throws_ArgumentException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<string>(
 				new string[] { "", " " },
-				ExceptionData.ArgumentWhiteSpaceExceptionMessage,
-				ExceptionData.ArgumentWhiteSpaceExceptionDefaultMessage);
+				ExceptionData.ArgumentExceptionWhiteSpaceMessage,
+				ExceptionData.ArgumentExceptionDefaultMessage);
 		}
 		#endregion
 	}

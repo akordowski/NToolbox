@@ -2,7 +2,9 @@
 {
 	internal enum ResourceName
 	{
-		ArgumentEmptyException_Message,
-		ArgumentWhiteSpaceException_Message
+		ArgumentException_BooleanIsFalseMessage,
+		ArgumentException_BooleanIsTrueMessage,
+		ArgumentException_EmptyMessage,
+		ArgumentException_WhiteSpaceMessage
 	}
 }

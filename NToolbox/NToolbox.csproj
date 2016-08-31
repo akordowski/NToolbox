@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Data\Common\INotifyObject.cs" />
     <Compile Include="Data\Common\NotifyObject.cs" />
+    <Compile Include="Drawing\Printing\IPrintable.cs" />
     <Compile Include="EventArgs.cs" />
     <Compile Include="Extensions\CollectionExtension.cs" />
     <Compile Include="Extensions\ComparableExtension.cs" />

@@ -126,6 +126,9 @@
   <data name="ArgumentException_EmptyMessage" xml:space="preserve">
     <value>Der Wert darf nicht leer sein.</value>
   </data>
+  <data name="ArgumentException_EmptyOrWhiteSpaceMessage" xml:space="preserve">
+    <value>Der Wert darf nicht leer sein oder nur aus Leerzeichen bestehen.</value>
+  </data>
   <data name="ArgumentException_WhiteSpaceMessage" xml:space="preserve">
     <value>Der Wert darf nicht nur aus Leerzeichen bestehen.</value>
   </data>

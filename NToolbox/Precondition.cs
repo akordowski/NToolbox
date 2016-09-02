@@ -592,6 +592,56 @@ namespace NToolbox
 
 		#region Public Static Methods - String
 		/// <summary>
+		/// Checks whether the specified string is not an empty string or consists only of
+		/// white-space characters.
+		/// </summary>
+		/// <param name="str">The string to test.</param>
+		/// <exception cref="ArgumentException"><em>str</em> is <strong>empty</strong> or consists
+		/// only of white-space characters.</exception>
+		public static void IsNotEmptyOrWhiteSpace(string str)
+		{
+			if (str.IsEmptyOrWhiteSpace())
+			{
+				string message = Resource.GetString(ResourceName.ArgumentException_EmptyOrWhiteSpaceMessage);
+				throw new ArgumentException(message);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified string is not an empty string or consists only of
+		/// white-space characters.
+		/// </summary>
+		/// <param name="str">The string to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <exception cref="ArgumentException"><em>str</em> is <strong>empty</strong> or consists
+		/// only of white-space characters.</exception>
+		public static void IsNotEmptyOrWhiteSpace(string str, string paramName)
+		{
+			if (str.IsEmptyOrWhiteSpace())
+			{
+				string message = Resource.GetString(ResourceName.ArgumentException_EmptyOrWhiteSpaceMessage);
+				throw new ArgumentException(message, paramName);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified string is not an empty string or consists only of
+		/// white-space characters.
+		/// </summary>
+		/// <param name="str">The string to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <param name="message">A message that describes the error.</param>
+		/// <exception cref="ArgumentException"><em>str</em> is <strong>empty</strong> or consists
+		/// only of white-space characters.</exception>
+		public static void IsNotEmptyOrWhiteSpace(string str, string paramName, string message)
+		{
+			if (str.IsEmptyOrWhiteSpace())
+			{
+				throw new ArgumentException(message, paramName);
+			}
+		}
+
+		/// <summary>
 		/// Checks whether the specified string is not <strong>null</strong> or an empty string.
 		/// </summary>
 		/// <param name="str">The string to test.</param>

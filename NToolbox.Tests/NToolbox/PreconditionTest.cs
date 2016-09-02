@@ -252,6 +252,48 @@ namespace NToolbox.Tests.NToolbox
 		#endregion
 
 		#region Tests - String
+		[TestCase(null)]
+		[TestCase("str")]
+		[TestCase(" str ")]
+		public void IsNotEmptyOrWhiteSpace_With_Valid_String_Throws_Nothing(string value)
+		{
+			AssertThrowsNothing(() => Precondition.IsNotEmptyOrWhiteSpace(value));
+		}
+
+		[TestCase(null, ExceptionData.Parameter)]
+		[TestCase("str", ExceptionData.Parameter)]
+		[TestCase(" str ", ExceptionData.Parameter)]
+		public void IsNotEmptyOrWhiteSpace_With_Valid_String_Throws_Nothing(string value, string parameter)
+		{
+			AssertThrowsNothing(() => Precondition.IsNotEmptyOrWhiteSpace(value, parameter));
+		}
+
+		[TestCase(null, ExceptionData.Parameter, ExceptionData.Message)]
+		[TestCase("str", ExceptionData.Parameter, ExceptionData.Message)]
+		[TestCase(" str ", ExceptionData.Parameter, ExceptionData.Message)]
+		public void IsNotEmptyOrWhiteSpace_With_Valid_String_Throws_Nothing(string value, string parameter, string message)
+		{
+			AssertThrowsNothing(() => Precondition.IsNotEmptyOrWhiteSpace(value, parameter, message));
+		}
+
+		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotEmptyOrWhiteSpace_With_Null_String_Throws_ArgumentException_TestCases")]
+		public void IsNotEmptyOrWhiteSpace_With_Null_String_Throws_ArgumentException(Culture culture, string value, string expectedParameter, string expectedMessage)
+		{
+			AssertThrowsException<ArgumentException>(culture, () => Precondition.IsNotEmptyOrWhiteSpace(value), expectedParameter, expectedMessage, null);
+		}
+
+		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotEmptyOrWhiteSpace_With_Null_String_And_ParamName_Throws_ArgumentException_TestCases")]
+		public void IsNotEmptyOrWhiteSpace_With_Null_String_And_ParamName_Throws_ArgumentException(Culture culture, string value, string parameter, string expectedParameter, string expectedMessage)
+		{
+			AssertThrowsException<ArgumentException>(culture, () => Precondition.IsNotEmptyOrWhiteSpace(value, parameter), expectedParameter, expectedMessage, null);
+		}
+
+		[TestCaseSource(typeof(PreconditionTestCaseSource), "String_IsNotEmptyOrWhiteSpace_With_Null_String_And_ParamName_And_Message_Throws_ArgumentException_TestCases")]
+		public void IsNotEmptyOrWhiteSpace_With_Null_String_And_ParamName_And_Message_Throws_ArgumentException(Culture culture, string value, string parameter, string message, string expectedParameter, string expectedMessage)
+		{
+			AssertThrowsException<ArgumentException>(culture, () => Precondition.IsNotEmptyOrWhiteSpace(value, parameter, message), expectedParameter, expectedMessage, null);
+		}
+
 		[TestCase(" ")]
 		[TestCase("abc")]
 		public void IsNotNullOrEmpty_With_Valid_String_Throws_Nothing(string value)

@@ -36,6 +36,18 @@ namespace NToolbox.NUnit.Data
 			}
 		}
 
+		public static ReadOnlyDictionary<Culture, string> ArgumentExceptionEmptyOrWhiteSpaceMessage
+		{
+			get
+			{
+				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
+				dict.Add(Culture.en, "Value cannot be empty or consists only of white-space characters.");
+				dict.Add(Culture.de, "Der Wert darf nicht leer sein oder nur aus Leerzeichen bestehen.");
+
+				return new ReadOnlyDictionary<Culture, string>(dict);
+			}
+		}
+
 		public static ReadOnlyDictionary<Culture, string> ArgumentExceptionIsFalseMessage
 		{
 			get

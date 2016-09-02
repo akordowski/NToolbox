@@ -97,6 +97,18 @@ namespace NToolbox.Extensions
 		}
 
 		/// <summary>
+		/// Indicates whether the string is an empty string, or consists only of white-space
+		/// characters.
+		/// </summary>
+		/// <param name="str">A string to test.</param>
+		/// <returns><strong>true</strong> if the <em>str</em> parameter is an empty string, or
+		/// consists only of white-space characters; otherwise, <strong>false</strong>.</returns>
+		public static bool IsEmptyOrWhiteSpace(this string str)
+		{
+			return str != null && (string.IsNullOrEmpty(str) || string.IsNullOrWhiteSpace(str));
+		}
+
+		/// <summary>
 		/// Indicates whether the string is an lower case string.
 		/// </summary>
 		/// <param name="str">A string to test.</param>

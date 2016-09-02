@@ -5,6 +5,7 @@
 		ArgumentException_BooleanIsFalseMessage,
 		ArgumentException_BooleanIsTrueMessage,
 		ArgumentException_EmptyMessage,
+		ArgumentException_EmptyOrWhiteSpaceMessage,
 		ArgumentException_WhiteSpaceMessage
 	}
 }

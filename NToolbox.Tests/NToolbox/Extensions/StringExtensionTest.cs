@@ -63,10 +63,20 @@ namespace NToolbox.Tests.NToolbox.Extensions
 			AssertThrowsException<ArgumentNullException>(() => value.IsBase64(), expectedParameter);
 		}
 
+		[TestCase(null, ExpectedResult = false)]
+		[TestCase("str", ExpectedResult = false)]
+		[TestCase(" str ", ExpectedResult = false)]
+		[TestCase("", ExpectedResult = true)]
+		[TestCase("  ", ExpectedResult = true)]
+		public bool IsEmptyOrWhiteSpace_Return_Valid_Result(string value)
+		{
+			return value.IsEmptyOrWhiteSpace();
+		}
+
 		[TestCase(null, ExpectedResult = true)]
 		[TestCase("", ExpectedResult = true)]
 		[TestCase("  ", ExpectedResult = false)]
-		[TestCase(" string ", ExpectedResult = false)]
+		[TestCase(" str ", ExpectedResult = false)]
 		public bool IsNullOrEmpty_Returns_Valid_Result(string value)
 		{
 			return value.IsNullOrEmpty();
@@ -75,7 +85,7 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		[TestCase(null, ExpectedResult = true)]
 		[TestCase("", ExpectedResult = true)]
 		[TestCase("  ", ExpectedResult = true)]
-		[TestCase(" string ", ExpectedResult = false)]
+		[TestCase(" str ", ExpectedResult = false)]
 		public bool IsNullOrWhiteSpace_Returns_Valid_Result(string value)
 		{
 			return value.IsNullOrWhiteSpace();
@@ -289,7 +299,7 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		public static IEnumerable ToDateTime_TestCases()
 		{
 			yield return new TestCaseData(null, DateTime.MinValue);
-			yield return new TestCaseData("01.01.2016", new DateTime(2016, 1 ,1));
+			yield return new TestCaseData("01.01.2016", new DateTime(2016, 1, 1));
 		}
 
 		public static IEnumerable ToList_TestCases()

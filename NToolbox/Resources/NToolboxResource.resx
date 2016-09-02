@@ -126,6 +126,9 @@
   <data name="ArgumentException_EmptyMessage" xml:space="preserve">
     <value>Value cannot be empty.</value>
   </data>
+  <data name="ArgumentException_EmptyOrWhiteSpaceMessage" xml:space="preserve">
+    <value>Value cannot be empty or consists only of white-space characters.</value>
+  </data>
   <data name="ArgumentException_WhiteSpaceMessage" xml:space="preserve">
     <value>Value cannot consists only of white-space characters.</value>
   </data>

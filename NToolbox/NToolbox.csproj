@@ -74,6 +74,11 @@
     <Compile Include="Globalization\LanguageAlpha3T.cs" />
     <Compile Include="Globalization\LanguageFamily.cs" />
     <Compile Include="ICloneable.cs" />
+    <Compile Include="IO\Compression\ArchiveFileExtensions.cs" />
+    <Compile Include="IO\Compression\ArchiveMode.cs" />
+    <Compile Include="IO\Compression\IArchive.cs" />
+    <Compile Include="IO\Compression\IArchiveEntry.cs" />
+    <Compile Include="IO\Compression\IArchiveFile.cs" />
     <Compile Include="Media\AudioCodec.cs" />
     <Compile Include="Media\Bitrate.cs" />
     <Compile Include="Media\Samplerate.cs" />

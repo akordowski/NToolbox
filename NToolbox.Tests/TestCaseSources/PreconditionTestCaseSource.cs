@@ -156,6 +156,28 @@ namespace NToolbox.Tests.TestCaseSources
 		#endregion
 
 		#region Test Case Sources - String
+		public static IEnumerable String_IsNotEmptyOrWhiteSpace_With_Null_String_Throws_ArgumentException_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataException<string>(
+				new string[] { "", "  " },
+				ExceptionData.ArgumentExceptionEmptyOrWhiteSpaceMessage);
+		}
+
+		public static IEnumerable String_IsNotEmptyOrWhiteSpace_With_Null_String_And_ParamName_Throws_ArgumentException_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameter<string>(
+				new string[] { "", "  " },
+				ExceptionData.ArgumentExceptionEmptyOrWhiteSpaceMessage);
+		}
+
+		public static IEnumerable String_IsNotEmptyOrWhiteSpace_With_Null_String_And_ParamName_And_Message_Throws_ArgumentException_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataExceptionWithParameterAndMessage<string>(
+				new string[] { "", "  " },
+				ExceptionData.ArgumentExceptionEmptyOrWhiteSpaceMessage,
+				ExceptionData.ArgumentExceptionDefaultMessage);
+		}
+
 		public static IEnumerable String_IsNotNullOrEmpty_With_Null_String_Throws_ArgumentNullException_TestCases()
 		{
 			return TestCaseDataUtil.CreateTestCaseDataException<string>(

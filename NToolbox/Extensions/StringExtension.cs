@@ -97,6 +97,17 @@ namespace NToolbox.Extensions
 		}
 
 		/// <summary>
+		/// Indicates whether the string is an empty string.
+		/// </summary>
+		/// <param name="str">A string to test.</param>
+		/// <returns><strong>true</strong> if the <em>str</em> parameter is an empty string;
+		/// otherwise, <strong>false</strong>.</returns>
+		public static bool IsEmpty(this string str)
+		{
+			return str != null && string.IsNullOrEmpty(str);
+		}
+
+		/// <summary>
 		/// Indicates whether the string is an empty string, or consists only of white-space
 		/// characters.
 		/// </summary>
@@ -148,7 +159,7 @@ namespace NToolbox.Extensions
 		}
 
 		/// <summary>
-		/// Indicates whether the string is an upper case string. 
+		/// Indicates whether the string is an upper case string.
 		/// </summary>
 		/// <param name="str">A string to test.</param>
 		/// <returns><strong>true</strong> if the <em>str</em> parameter is an upper case string;
@@ -160,6 +171,17 @@ namespace NToolbox.Extensions
 			Precondition.IsNotNull(str, nameof(str));
 
 			return Regex.IsMatch(str, @"^[A-Z]+$");
+		}
+
+		/// <summary>
+		/// Indicates whether the string consists only of white-space characters.
+		/// </summary>
+		/// <param name="str">A string to test.</param>
+		/// <returns><strong>true</strong> if the <em>str</em> parameter consists only of
+		/// white-space characters; otherwise, <strong>false</strong>.</returns>
+		public static bool IsWhiteSpace(this string str)
+		{
+			return str != null && string.IsNullOrWhiteSpace(str);
 		}
 
 		/// <summary>

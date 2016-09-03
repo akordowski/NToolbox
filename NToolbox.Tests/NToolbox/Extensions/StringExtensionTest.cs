@@ -64,6 +64,14 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		}
 
 		[TestCase(null, ExpectedResult = false)]
+		[TestCase("", ExpectedResult = true)]
+		[TestCase("  ", ExpectedResult = false)]
+		public bool IsEmpty_Return_Valid_Result(string value)
+		{
+			return value.IsEmpty();
+		}
+
+		[TestCase(null, ExpectedResult = false)]
 		[TestCase("str", ExpectedResult = false)]
 		[TestCase(" str ", ExpectedResult = false)]
 		[TestCase("", ExpectedResult = true)]
@@ -117,6 +125,14 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		public void IsUpperCase_Throws_ArgumentNullException(string value, string expectedParameter)
 		{
 			AssertThrowsException<ArgumentNullException>(() => value.IsUpperCase(), expectedParameter);
+		}
+
+		[TestCase(null, ExpectedResult = false)]
+		[TestCase("", ExpectedResult = true)]
+		[TestCase("  ", ExpectedResult = true)]
+		public bool IsWhiteSpace_Return_Valid_Result(string value)
+		{
+			return value.IsWhiteSpace();
 		}
 
 		[TestCaseSource("ToArray_TestCases")]

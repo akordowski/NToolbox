@@ -51,9 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NToolbox\Collections\RangeExtensionTest.cs" />
     <Compile Include="NToolbox\Data\Common\NotifyObjectTest.cs" />
-    <Compile Include="NToolbox\Collections\RangeTest.cs" />
     <Compile Include="NToolbox\Data\Serialization\DeserializeConverterTest.cs" />
     <Compile Include="NToolbox\Data\Serialization\SerializeConverterTest.cs" />
     <Compile Include="NToolbox\EventArgsTests.cs" />

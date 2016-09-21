@@ -71,28 +71,28 @@ namespace NToolbox.Tests.NToolbox.Extensions
 		[TestCase(2, 3, true)]
 		[TestCase(2, 2, true)]
 		[TestCase(2, 1, false)]
-		public void IsSmallerOrEqual_Returns_Valid_Result(int value, int referenceValue, bool expectedResult)
+		public void IsLessOrEqual_Returns_Valid_Result(int value, int referenceValue, bool expectedResult)
 		{
-			Assert.That(value.IsSmallerOrEqual(referenceValue), Is.EqualTo(expectedResult));
+			Assert.That(value.IsLessOrEqual(referenceValue), Is.EqualTo(expectedResult));
 		}
 
 		[TestCaseSource("Comparable_TestCases")]
-		public void IsSmallerOrEqual_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
+		public void IsLessOrEqual_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
 		{
-			AssertThrowsException<ArgumentNullException>(() => value.IsSmallerOrEqual(referenceValue), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => value.IsLessOrEqual(referenceValue), expectedParameter);
 		}
 
 		[TestCase(1, 0, false)]
 		[TestCase(1, 2, true)]
-		public void IsSmaller_Returns_Valid_Result(int value, int referenceValue, bool expectedResult)
+		public void IsLess_Returns_Valid_Result(int value, int referenceValue, bool expectedResult)
 		{
-			Assert.That(value.IsSmaller(referenceValue), Is.EqualTo(expectedResult));
+			Assert.That(value.IsLess(referenceValue), Is.EqualTo(expectedResult));
 		}
 
 		[TestCaseSource("Comparable_TestCases")]
-		public void IsSmaller_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
+		public void IsLess_Throws_ArgumentNullException(IComparable value, IComparable referenceValue, string expectedParameter)
 		{
-			AssertThrowsException<ArgumentNullException>(() => value.IsSmaller(referenceValue), expectedParameter);
+			AssertThrowsException<ArgumentNullException>(() => value.IsLess(referenceValue), expectedParameter);
 		}
 		#endregion
 

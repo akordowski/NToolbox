@@ -494,38 +494,38 @@ namespace NToolbox
 		}
 
 		/// <summary>
-		/// Checks whether the value is smaller or equal to the reference value.
+		/// Checks whether the value is less or equal to the reference value.
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
 		/// range.</exception>
-		public static void IsSmallerOrEqual(IComparable value, IComparable referenceValue)
+		public static void IsLessOrEqual(IComparable value, IComparable referenceValue)
 		{
-			if (!value.IsSmallerOrEqual(referenceValue))
+			if (!value.IsLessOrEqual(referenceValue))
 			{
 				throw new ArgumentOutOfRangeException();
 			}
 		}
 
 		/// <summary>
-		/// Checks whether the value is smaller or equal to the reference value.
+		/// Checks whether the value is less or equal to the reference value.
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
 		/// range.</exception>
-		public static void IsSmallerOrEqual(IComparable value, IComparable referenceValue, string paramName)
+		public static void IsLessOrEqual(IComparable value, IComparable referenceValue, string paramName)
 		{
-			if (!value.IsSmallerOrEqual(referenceValue))
+			if (!value.IsLessOrEqual(referenceValue))
 			{
 				throw new ArgumentOutOfRangeException(paramName);
 			}
 		}
 
 		/// <summary>
-		/// Checks whether the value is smaller or equal to the reference value.
+		/// Checks whether the value is less or equal to the reference value.
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
@@ -533,47 +533,47 @@ namespace NToolbox
 		/// <param name="message">A message that describes the error.</param>
 		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
 		/// range.</exception>
-		public static void IsSmallerOrEqual(IComparable value, IComparable referenceValue, string paramName, string message)
+		public static void IsLessOrEqual(IComparable value, IComparable referenceValue, string paramName, string message)
 		{
-			if (!value.IsSmallerOrEqual(referenceValue))
+			if (!value.IsLessOrEqual(referenceValue))
 			{
 				throw new ArgumentOutOfRangeException(paramName, referenceValue, message);
 			}
 		}
 
 		/// <summary>
-		/// Checks whether the value is smaller as the reference value.
+		/// Checks whether the value is less as the reference value.
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
 		/// range.</exception>
-		public static void IsSmaller(IComparable value, IComparable referenceValue)
+		public static void IsLess(IComparable value, IComparable referenceValue)
 		{
-			if (!value.IsSmaller(referenceValue))
+			if (!value.IsLess(referenceValue))
 			{
 				throw new ArgumentOutOfRangeException();
 			}
 		}
 
 		/// <summary>
-		/// Checks whether the value is smaller as the reference value.
+		/// Checks whether the value is less as the reference value.
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
 		/// range.</exception>
-		public static void IsSmaller(IComparable value, IComparable referenceValue, string paramName)
+		public static void IsLess(IComparable value, IComparable referenceValue, string paramName)
 		{
-			if (!value.IsSmaller(referenceValue))
+			if (!value.IsLess(referenceValue))
 			{
 				throw new ArgumentOutOfRangeException(paramName);
 			}
 		}
 
 		/// <summary>
-		/// Checks whether the value is smaller as the reference value.
+		/// Checks whether the value is less as the reference value.
 		/// </summary>
 		/// <param name="value">The value to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
@@ -581,9 +581,9 @@ namespace NToolbox
 		/// <param name="message">A message that describes the error.</param>
 		/// <exception cref="ArgumentOutOfRangeException"><em>value</em> is out of
 		/// range.</exception>
-		public static void IsSmaller(IComparable value, IComparable referenceValue, string paramName, string message)
+		public static void IsLess(IComparable value, IComparable referenceValue, string paramName, string message)
 		{
-			if (!value.IsSmaller(referenceValue))
+			if (!value.IsLess(referenceValue))
 			{
 				throw new ArgumentOutOfRangeException(paramName, referenceValue, message);
 			}

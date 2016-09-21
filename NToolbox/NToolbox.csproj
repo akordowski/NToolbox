@@ -54,7 +54,10 @@
     <Compile Include="Data\Exchange\IImport.cs" />
     <Compile Include="Data\IConverter.cs" />
     <Compile Include="Data\IReader.cs" />
+    <Compile Include="Data\Serialization\DeserializeConverter.cs" />
+    <Compile Include="Data\Serialization\ISerializer.cs" />
     <Compile Include="Data\IWriter.cs" />
+    <Compile Include="Data\Serialization\SerializeConverter.cs" />
     <Compile Include="Drawing\Printing\IPrintable.cs" />
     <Compile Include="EventArgs.cs" />
     <Compile Include="Extensions\CollectionExtension.cs" />
@@ -62,7 +65,9 @@
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\DictionaryExtension.cs" />
     <Compile Include="Extensions\NumericExtension.cs" />
+    <Compile Include="Extensions\StringBuilderExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Extensions\TypeExtension.cs" />
     <Compile Include="Globalization\CountryAlpha2.cs" />
     <Compile Include="Globalization\CountryAlpha3.cs" />
     <Compile Include="Globalization\Country.cs" />
@@ -84,6 +89,7 @@
     <Compile Include="Media\Samplerate.cs" />
     <Compile Include="Net\HttpCode.cs" />
     <Compile Include="Net\HttpMethod.cs" />
+    <Compile Include="OperatorType.cs" />
     <Compile Include="Precondition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.cs" />

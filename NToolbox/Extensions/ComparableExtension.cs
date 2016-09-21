@@ -24,7 +24,7 @@ namespace NToolbox.Extensions
 			Precondition.IsNotNull(min, nameof(min));
 			Precondition.IsNotNull(max, nameof(max));
 
-			return value.IsGreaterOrEqual(min) && value.IsSmallerOrEqual(max);
+			return value.IsGreaterOrEqual(min) && value.IsLessOrEqual(max);
 		}
 
 		/// <summary>
@@ -75,41 +75,41 @@ namespace NToolbox.Extensions
 			Precondition.IsNotNull(value, nameof(value));
 			Precondition.IsNotNull(referenceValue, nameof(referenceValue));
 
-			return value.CompareTo(referenceValue) == 1;
+			return value.CompareTo(referenceValue) > 0;
 		}
 
 		/// <summary>
-		/// Indicates whether the instance is smaller or equal to the reference value.
+		/// Indicates whether the instance is less or equal to the reference value.
 		/// </summary>
 		/// <param name="value">The instance to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <returns><strong>true</strong> if the instance is smaller or equal to the reference
+		/// <returns><strong>true</strong> if the instance is less or equal to the reference
 		/// value; otherwise, <strong>false</strong>.</returns>
 		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is
 		/// <strong>null</strong>.</exception>
-		public static bool IsSmallerOrEqual(this IComparable value, IComparable referenceValue)
+		public static bool IsLessOrEqual(this IComparable value, IComparable referenceValue)
 		{
 			Precondition.IsNotNull(value, nameof(value));
 			Precondition.IsNotNull(referenceValue, nameof(referenceValue));
 
-			return value.IsSmaller(referenceValue) || value.IsEqual(referenceValue);
+			return value.IsLess(referenceValue) || value.IsEqual(referenceValue);
 		}
 
 		/// <summary>
-		/// Indicates whether the instance is smaller as the reference value.
+		/// Indicates whether the instance is less as the reference value.
 		/// </summary>
 		/// <param name="value">The instance to test.</param>
 		/// <param name="referenceValue">The reference value to test.</param>
-		/// <returns><strong>true</strong> if the instance is smaller as the reference value;
+		/// <returns><strong>true</strong> if the instance is less as the reference value;
 		/// otherwise, <strong>false</strong>.</returns>
 		/// <exception cref="ArgumentNullException"><em>value</em> or <em>referenceValue</em> is
 		/// <strong>null</strong>.</exception>
-		public static bool IsSmaller(this IComparable value, IComparable referenceValue)
+		public static bool IsLess(this IComparable value, IComparable referenceValue)
 		{
 			Precondition.IsNotNull(value, nameof(value));
 			Precondition.IsNotNull(referenceValue, nameof(referenceValue));
 
-			return value.CompareTo(referenceValue) == -1;
+			return value.CompareTo(referenceValue) < 0;
 		}
 		#endregion
 	}

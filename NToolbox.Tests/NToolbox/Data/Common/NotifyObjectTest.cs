@@ -1,7 +1,7 @@
 ﻿using NToolbox.Data.Common;
 using NUnit.Framework;
 
-namespace NToolbox.Tests.NToolbox.Data
+namespace NToolbox.Tests.NToolbox.Data.Common
 {
 	[TestFixture]
 	public class NotifyObjectTest

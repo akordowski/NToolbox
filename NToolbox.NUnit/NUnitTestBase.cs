@@ -14,6 +14,16 @@ namespace NToolbox.NUnit
 			Assert.That(() => method(), Throws.Nothing);
 		}
 
+		protected void AssertThrowsArgumentException(Action method, string expectedParameter)
+		{
+			AssertThrowsException<ArgumentException>(method, expectedParameter);
+		}
+
+		protected void AssertThrowsArgumentNullException(Action method, string expectedParameter)
+		{
+			AssertThrowsException<ArgumentNullException>(method, expectedParameter);
+		}
+
 		protected void AssertThrowsException<T>(Action method, string expectedParameter) where T : Exception
 		{
 			Assert.That(() => method(),

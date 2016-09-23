@@ -10,17 +10,17 @@ namespace NToolbox.Tests.NToolbox.Data.Serialization
 	{
 		#region Private Fields
 		private DeserializeConverter<int?, string> _converter;
-		private Mock<ISerializer<string, int?>> _serializerMock;
+		private Mock<IDeserializer<int?, string>> _deserializerMock;
 		#endregion
 
 		#region SetUp
 		[SetUp]
 		public void SetUp()
 		{
-			_serializerMock = new Mock<ISerializer<string, int?>>();
-			_serializerMock.Setup(obj => obj.Deserialize(It.IsAny<int?>())).Returns((int? value) => value.ToString());
+			_deserializerMock = new Mock<IDeserializer<int?, string>>();
+			_deserializerMock.Setup(obj => obj.Deserialize(It.IsAny<int?>())).Returns((int? value) => value.ToString());
 
-			_converter = new DeserializeConverter<int?, string>(_serializerMock.Object);
+			_converter = new DeserializeConverter<int?, string>(_deserializerMock.Object);
 		}
 		#endregion
 
@@ -28,13 +28,13 @@ namespace NToolbox.Tests.NToolbox.Data.Serialization
 		[Test]
 		public void Initialize_With_Null_Serializer_Throws_ArgumentNullException()
 		{
-			AssertThrowsArgumentNullException(() => new DeserializeConverter<int?, string>(null), "serializer");
+			AssertThrowsArgumentNullException(() => new DeserializeConverter<int?, string>(null), "deserializer");
 		}
 
 		[Test]
 		public void Initialize_With_Valid_Serializer_Throws_Nothing()
 		{
-			AssertThrowsNothing(() => new DeserializeConverter<int?, string>(_serializerMock.Object));
+			AssertThrowsNothing(() => new DeserializeConverter<int?, string>(_deserializerMock.Object));
 		}
 
 		[Test]

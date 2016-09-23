@@ -55,6 +55,8 @@
     <Compile Include="Data\IConverter.cs" />
     <Compile Include="Data\IReader.cs" />
     <Compile Include="Data\Serialization\DeserializeConverter.cs" />
+    <Compile Include="Data\Serialization\IDeserializer.cs" />
+    <Compile Include="Data\Serialization\ISerialize.cs" />
     <Compile Include="Data\Serialization\ISerializer.cs" />
     <Compile Include="Data\IWriter.cs" />
     <Compile Include="Data\Serialization\SerializeConverter.cs" />

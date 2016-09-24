@@ -5,6 +5,7 @@ using NToolbox.Tests.TestCaseSources;
 using NUnit.Framework;
 using System;
 using System.Collections;
+using System.ComponentModel;
 
 namespace NToolbox.Tests.NToolbox
 {
@@ -154,6 +155,69 @@ namespace NToolbox.Tests.NToolbox
 		public void IsTrue_With_Invalid_Condition_Delegate_And_ParamName_And_Message_Throws_ArgumentException(Culture culture, bool value, string parameter, string message, string expectedParameter, string expectedMessage)
 		{
 			AssertThrowsException<ArgumentException>(culture, () => Precondition.IsTrue(() => value, parameter, message), expectedParameter, expectedMessage, null);
+		}
+		#endregion
+
+		#region Tests - Enum
+		[Test]
+		public void IsDefinedEnum_With_Invalid_Type_And_Value_Throws_ArgumentException()
+		{
+			AssertThrowsArgumentException(() => Precondition.IsDefinedEnum<int>(1), "value");
+		}
+
+		[Test]
+		public void IsDefinedEnum_With_Invalid_Type_And_Value_And_ParamName_Throws_ArgumentException()
+		{
+			AssertThrowsArgumentException(() => Precondition.IsDefinedEnum<int>(1, ExceptionData.Parameter), "value");
+		}
+
+		[Test]
+		public void IsDefinedEnum_With_Invalid_Type_And_Value_And_ParamName_And_Message_Throws_ArgumentException()
+		{
+			AssertThrowsArgumentException(() => Precondition.IsDefinedEnum<int>(1, ExceptionData.Parameter, ExceptionData.Message), "value");
+		}
+
+		[TestCaseSource(typeof(PreconditionTestCaseSource), "IsDefinedEnum_With_Invalid_Enumeration_Throws_InvalidEnumArgumentException_TestCases")]
+		public void IsDefinedEnum_With_Invalid_Enumeration_Throws_InvalidEnumArgumentException(Culture culture, int value, string expectedParameter, string expectedMessage)
+		{
+			AssertThrowsException<InvalidEnumArgumentException>(culture,
+				() => Precondition.IsDefinedEnum<TestEnum>((TestEnum)value), expectedParameter, expectedMessage, null);
+		}
+
+		[Test]
+		public void IsDefinedEnum_With_Invalid_Value_And_ParamName_Throws_InvalidEnumArgumentException()
+		{
+			Assert.That(() => Precondition.IsDefinedEnum<TestEnum>((TestEnum)0, ExceptionData.Parameter), Throws
+				.InstanceOf<InvalidEnumArgumentException>()
+				.And.Property("ParamName").EqualTo(ExceptionData.Parameter)
+				.And.Message.Contains("(0)"));
+		}
+
+		[Test]
+		public void IsDefinedEnum_With_Invalid_Value_And_ParamName_And_Message_Throws_InvalidEnumArgumentException()
+		{
+			Assert.That(() => Precondition.IsDefinedEnum<TestEnum>((TestEnum)0, ExceptionData.Parameter, ExceptionData.Message), Throws
+				.InstanceOf<InvalidEnumArgumentException>()
+				.And.Property("ParamName").EqualTo(ExceptionData.Parameter)
+				.And.Message.StartsWith(ExceptionData.Message));
+		}
+
+		[Test]
+		public void IsDefinedEnum_With_Value_Throws_Nothing()
+		{
+			AssertThrowsNothing(() => Precondition.IsDefinedEnum<TestEnum>(TestEnum.Value));
+		}
+
+		[Test]
+		public void IsDefinedEnum_With_Value_And_ParamName_Throws_Nothing()
+		{
+			AssertThrowsNothing(() => Precondition.IsDefinedEnum<TestEnum>(TestEnum.Value, "ParamName"));
+		}
+
+		[Test]
+		public void IsDefinedEnum_With_Value_And_ParamName_And_Message_Throws_Nothing()
+		{
+			AssertThrowsNothing(() => Precondition.IsDefinedEnum<TestEnum>(TestEnum.Value, "ParamName", "Message"));
 		}
 		#endregion
 
@@ -409,4 +473,11 @@ namespace NToolbox.Tests.NToolbox
 		}
 		#endregion
 	}
+
+	#region Internal Classes
+	internal enum TestEnum
+	{
+		Value = 1
+	}
+	#endregion
 }

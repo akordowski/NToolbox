@@ -55,6 +55,15 @@ namespace NToolbox.Tests.TestCaseSources
 		}
 		#endregion
 
+		#region Test Case Sources - Enum
+		public static IEnumerable IsDefinedEnum_With_Invalid_Enumeration_Throws_InvalidEnumArgumentException_TestCases()
+		{
+			return TestCaseDataUtil.CreateTestCaseDataException<int>(
+				new int[] { 0 },
+				ExceptionData.InvalidEnumArgumentExceptionDefaultMessage);
+		}
+		#endregion
+
 		#region Test Case Sources - Object
 		public static IEnumerable IsNotNull_With_Valid_Object_Throws_Nothing_TestCases()
 		{

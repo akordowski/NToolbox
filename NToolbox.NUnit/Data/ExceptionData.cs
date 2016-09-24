@@ -107,6 +107,18 @@ namespace NToolbox.NUnit.Data
 				return new ReadOnlyDictionary<Culture, string>(dict);
 			}
 		}
+
+		public static ReadOnlyDictionary<Culture, string> InvalidEnumArgumentExceptionDefaultMessage
+		{
+			get
+			{
+				Dictionary<Culture, string> dict = new Dictionary<Culture, string>();
+				dict.Add(Culture.en, "Exception of type 'System.ComponentModel.InvalidEnumArgumentException' was thrown.");
+				dict.Add(Culture.de, "Eine Ausnahme vom Typ \"System.ComponentModel.InvalidEnumArgumentException\" wurde ausgelöst.");
+
+				return new ReadOnlyDictionary<Culture, string>(dict);
+			}
+		}
 		#endregion
 	}
 }

@@ -2,6 +2,8 @@
 using NToolbox.Resources;
 using System;
 using System.Collections;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace NToolbox
 {
@@ -50,7 +52,7 @@ namespace NToolbox
 		/// <param name="paramName">The name of the parameter that caused the exception.</param>
 		/// <param name="message">A message that describes the error.</param>
 		/// <exception cref="ArgumentException"><em>value</em> is
-		/// <strong>falsetrue</strong>.</exception>
+		/// <strong>true</strong>.</exception>
 		public static void IsFalse(bool condition, string paramName, string message)
 		{
 			if (condition)
@@ -176,6 +178,87 @@ namespace NToolbox
 		public static void IsTrue(Func<bool> conditionDelegate, string paramName, string message)
 		{
 			IsTrue(conditionDelegate(), paramName, message);
+		}
+		#endregion
+
+		#region Public Static Methods - Enum
+		/// <summary>
+		/// Checks whether the specified value is a defined enumeration.
+		/// </summary>
+		/// <typeparam name="TEnum">The type of the enumeration.</typeparam>
+		/// <param name="value">The value to test.</param>
+		/// <exception cref="ArgumentException"><em>TEnum</em> is not a enumerated
+		/// type.</exception>
+		/// <exception cref="InvalidEnumArgumentException"><em>value</em> is a undefined
+		/// enumeration.</exception>
+		public static void IsDefinedEnum<TEnum>(TEnum value) where TEnum : struct
+		{
+			Type enumType = typeof(TEnum);
+
+			if (!enumType.IsEnum)
+			{
+				throw new ArgumentException("T must be an enumerated type", nameof(value));
+			}
+			else if (!Enum.IsDefined(enumType, value))
+			{
+				throw new InvalidEnumArgumentException();
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified value is a defined enumeration.
+		/// </summary>
+		/// <typeparam name="TEnum">The type of the enumeration.</typeparam>
+		/// <param name="value">The value to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <exception cref="ArgumentException"><em>TEnum</em> is not a enumerated
+		/// type.</exception>
+		/// <exception cref="InvalidEnumArgumentException"><em>value</em> is a undefined
+		/// enumeration.</exception>
+		public static void IsDefinedEnum<TEnum>(TEnum value, string paramName) where TEnum : struct
+		{
+			Type enumType = typeof(TEnum);
+
+			if (!enumType.IsEnum)
+			{
+				throw new ArgumentException("T must be an enumerated type", nameof(value));
+			}
+			else if (!Enum.IsDefined(enumType, value))
+			{
+				int intValue = Convert.ToInt32(value);
+
+				throw new InvalidEnumArgumentException(paramName, intValue, enumType);
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the specified value is a defined enumeration.
+		/// </summary>
+		/// <typeparam name="TEnum">The type of the enumeration.</typeparam>
+		/// <param name="value">The value to test.</param>
+		/// <param name="paramName">The name of the parameter that caused the exception.</param>
+		/// <param name="message">A message that describes the error.</param>
+		/// <exception cref="ArgumentException"><em>TEnum</em> is not a enumerated
+		/// type.</exception>
+		/// <exception cref="InvalidEnumArgumentException"><em>value</em> is a undefined
+		/// enumeration.</exception>
+		public static void IsDefinedEnum<TEnum>(TEnum value, string paramName, string message) where TEnum : struct
+		{
+			Type enumType = typeof(TEnum);
+
+			if (!enumType.IsEnum)
+			{
+				throw new ArgumentException("T must be an enumerated type", nameof(value));
+			}
+			else if (!Enum.IsDefined(enumType, value))
+			{
+				InvalidEnumArgumentException ex = new InvalidEnumArgumentException(message);
+
+				FieldInfo fieldInfo = typeof(ArgumentException).GetField("m_paramName", BindingFlags.Instance | BindingFlags.NonPublic);
+				fieldInfo.SetValue(ex, paramName);
+
+				throw ex;
+			}
 		}
 		#endregion
 

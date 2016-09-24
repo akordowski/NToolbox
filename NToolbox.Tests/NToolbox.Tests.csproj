@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NToolbox\ComponentModel\MethodExecutedEventArgsTests.cs" />
+    <Compile Include="NToolbox\ComponentModel\MethodExecutingEventArgsTests.cs" />
     <Compile Include="NToolbox\Data\Common\NotifyObjectTest.cs" />
     <Compile Include="NToolbox\Data\Serialization\DeserializeConverterTest.cs" />
     <Compile Include="NToolbox\Data\Serialization\SerializeConverterTest.cs" />

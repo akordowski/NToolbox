@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentModel\INotifyMethodExecuted.cs" />
+    <Compile Include="ComponentModel\INotifyMethodExecuting.cs" />
+    <Compile Include="ComponentModel\MethodExecutedEventArgs.cs" />
+    <Compile Include="ComponentModel\MethodExecutedEventHandler.cs" />
+    <Compile Include="ComponentModel\MethodExecutingEventArgs.cs" />
+    <Compile Include="ComponentModel\MethodExecutingEventHandler.cs" />
     <Compile Include="Data\Common\INotifyObject.cs" />
     <Compile Include="Data\Common\NotifyObject.cs" />
     <Compile Include="Data\Exchange\DataExchange.cs" />
